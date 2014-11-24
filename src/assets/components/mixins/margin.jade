@@ -1,0 +1,12 @@
+mixin margin
+
+    - var by = attributes.by
+    - attributes.by = null
+
+    if (by)
+        if (attributes.style)
+            - attributes.style += "; height:" + by + "em;"
+        else
+            - attributes.style = "height:" + by + "em;"
+
+    div&attributes(attributes).margin

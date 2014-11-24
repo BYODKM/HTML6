@@ -1,0 +1,30 @@
+mixin head
+
+    - var depth = filepath.split('/').length - 2
+    - var root = ''
+    - for (var i = 0; i < depth; ++i)
+        - root += '../'
+
+    head
+        meta(charset="utf-8")
+        meta(name="viewport" content="initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no")
+        meta(name="format-detection" content="telephone=no")
+        //- meta(name="apple-mobile-web-app-capable" content="yes")
+        //- meta(name="apple-mobile-web-app-title" content="")
+        //- meta(name="description" content="")
+        //- meta(name="keywords" content="")
+        link(href=root + "assets/styles/main.css" rel="stylesheet" media="only all")
+        script(src=root + "assets/scripts/main.js" charset="utf-8")
+        //- script
+        //-     :coffee
+        //-         do ->
+        //-             if (!window.navigator.standalone)
+        //-                 meta = document.createElement("meta")
+        //-                 meta.setAttribute("name", "apple-mobile-web-app-status-bar-style")
+        //-                 meta.setAttribute("content", "black-translucent")
+        //-                 head = document.getElementsByTagName("head")[0]
+        //-                 head.appendChild(meta)
+        //- link(href="/favicon.ico" rel="shortcut icon")
+        //- link(href="/apple-touch-icon-precomposed.png" rel="apple-touch-icon")
+        //- link(href="/apple-touch-startup-image.png" rel="apple-touch-startup-image")
+        block

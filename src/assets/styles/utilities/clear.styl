@@ -1,0 +1,14 @@
+html.html:root .clear
+
+    &--both
+        clear both
+
+    &--fix
+
+        &:before,
+        &:after
+            content ""
+            display table
+
+        &:after
+            clear both

@@ -1,0 +1,52 @@
+/*
+ * https://github.com/BYODKM/webkit-gradient.styl
+ *
+ * HOW TO USE
+ * background-image webkit-gradient(top left, red, blue)
+ * background-image linear-gradient(135deg, red, blue)
+ */
+
+webkit-gradient(start, colors...)
+
+    if start is a 'color'
+        unshift(colors, start)
+        start = top
+
+    justifyStops(total, index)
+        if index is total
+            return 100%
+        else if index > 0
+            return unit(index / total * 100, '%')
+        else
+            return 0%
+
+    for color, index in colors
+        if length(color) is 1
+            value = color[0]
+            color[0] = justifyStops(length(colors) - 1, index)
+            color[1] = value
+        else if typeof(color[1]) is 'unit'
+            unit = color[1]
+            color[1] = color[0]
+            color[0] = unit
+
+    webkitStart(start)
+        if length(start) is 1
+            return left start if start in (top bottom)
+            return start top if start in (left right)
+        else if start[0] in (top bottom)
+            return start[1] start[0]
+
+    joinColors(colors)
+        str = ''
+        for color, index in colors
+            str += ', ' if index isnt 0
+            position = color[0]
+            str += 'color-stop(%d, %s)' % (position/100 color[1])
+        unquote(str)
+
+    color-start = webkitStart(start)
+    color-end = webkitStart(opposite-position(start))
+    color-stops = joinColors(colors)
+
+    return '-webkit-gradient(linear, %s, %s, %s)' % (color-start color-end color-stops)
