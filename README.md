@@ -1,4 +1,3 @@
-3000
-====
+# 3000
 
 Front-end Boilerplate.
