@@ -1,4 +1,4 @@
-loaded = ->
+ready = ->
 
     scope = document.getElementById('page--index')
     if (!scope) then return
@@ -7,4 +7,4 @@ loaded = ->
         return
 
     return
-document.addEventListener('DOMContentLoaded', loaded, false)
+document.addEventListener('DOMContentLoaded', ready, false)

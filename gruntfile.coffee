@@ -4,57 +4,67 @@ module.exports = (grunt) ->
 
     grunt.initConfig
 
-        clean: ['public_html/assets/images/sprites/*.png', 'src/assets/images/sprites/*.png']
+        clean:
+            pre:
+                src: ['dist/assets/images/sprites']
+            post:
+                src: ['temp']
 
         sprite:
             options:
                 timestamp: '<%= Math.floor(Date.now() / 1000 / 60) %>'
+                algorithm: 'binary-tree'
+                cssOpts:
+                    functions: false
             standard:
-                src: 'src/assets/images/sources/1x/*.png'
-                destImg: 'src/assets/images/sprites/1x-<%= sprite.options.timestamp %>.png'
+                src: 'src/assets/images/sprites/1x/*.png'
+                destImg: 'temp/assets/images/sprites/1x-<%= sprite.options.timestamp %>.png'
                 destCSS: 'src/assets/styles/sprites/1x.styl'
                 imgPath: '../images/sprites/1x-<%= sprite.options.timestamp %>.png'
-                algorithm: 'binary-tree'
                 cssTemplate: 'src/assets/styles/sprites/1x.mustache'
             retina:
-                src: 'src/assets/images/sources/2x/*.png'
-                destImg: 'src/assets/images/sprites/2x-<%= sprite.options.timestamp %>.png'
+                src: 'src/assets/images/sprites/2x/*.png'
+                destImg: 'temp/assets/images/sprites/2x-<%= sprite.options.timestamp %>.png'
                 destCSS: 'src/assets/styles/sprites/2x.styl'
                 imgPath: '../images/sprites/2x-<%= sprite.options.timestamp %>.png'
-                algorithm: 'binary-tree'
                 cssTemplate: 'src/assets/styles/sprites/2x.mustache'
 
         image:
-            dynamic:
+            sprites:
                 files: [
                     expand: true,
-                    cwd: 'src/',
-                    src: ['**/*.{png,jpg,gif,svg}', '!src/assets/images/sources/**/*.png'],
-                    dest: 'public_html/'
+                    cwd: 'temp/assets/images/sprites/',
+                    src: ['**/*.png'],
+                    dest: 'dist/assets/images/sprites/'
                     ]
+            others:
+                files: [
+                    expand: true,
+                    cwd: 'src/assets/images/others/',
+                    src: ['**/*.{png,jpg,gif,svg}'],
+                    dest: 'dist/assets/images/others/'
+                    ]
+
+        stylus:
+            compile:
+                files:
+                    'dist/assets/styles/main.css': ['src/assets/styles/main.styl']
 
         coffee:
             compile:
                 expand: true
-                cwd: 'src/assets/scripts/src'
+                cwd: 'src/assets/scripts/coffee/'
                 src: ['**/*.coffee']
-                dest: 'src/assets/scripts/build'
+                dest: 'temp/assets/scripts/coffee/'
                 ext: (ext)-> return ext.replace(/coffee$/, 'js')
 
         jshint:
-            files: ['src/assets/scripts/build/**/*.js']
+            files: ['temp/assets/scripts/coffee/**/*.js']
 
         min:
-            mixins:
-                src: ['src/assets/scripts/build/global/*.js', 'src/assets/scripts/build/onload/*.js']
-                dest: 'public_html/assets/scripts/main.js'
-
-        stylus:
-            options:
-                compress: true
-            compile:
-                files:
-                    'public_html/assets/styles/main.css': ['src/assets/styles/main.styl']
+            scripts:
+                src: ['temp/assets/scripts/coffee/global/*.js', 'temp/assets/scripts/coffee/ready/*.js']
+                dest: 'dist/assets/scripts/main.js'
 
         jade:
             options:
@@ -63,24 +73,22 @@ module.exports = (grunt) ->
                 pretty: true
             compile:
                 expand: true
-                cwd: 'src'
+                cwd: 'src/'
                 src: ['**/*.jade', '!assets/**/*.jade']
-                dest: 'public_html'
+                dest: 'dist/'
                 ext: '.html'
 
         connect:
-            open:
+            server:
                 options:
                     port: '3000'
-                    useAvailablePort: true
-                    base: 'public_html'
+                    base: 'dist/'
 
         watch:
             options:
                 livereload: true
             default:
                 files: ['src/**/*.jade', 'src/**/*.styl', 'src/**/*.coffee']
-                tasks: ['clean', 'sprite', 'coffee', 'jshint', 'min', 'stylus', 'jade']
+                tasks: ['clean:pre', 'sprite', 'image', 'stylus', 'coffee', 'jshint', 'min', 'jade', 'clean:post']
 
-    grunt.registerTask 'build', ['clean', 'sprite', 'image', 'coffee', 'jshint', 'min', 'stylus', 'jade']
-    grunt.registerTask 'server', ['clean', 'sprite', 'image', 'coffee', 'jshint', 'min', 'stylus', 'jade', 'connect', 'watch']
+    grunt.registerTask 'default', ['connect', 'watch']
