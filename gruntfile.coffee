@@ -13,20 +13,19 @@ module.exports = (grunt) ->
         sprite:
             options:
                 timestamp: '<%= Math.floor(Date.now() / 1000 / 60) %>'
-                algorithm: 'binary-tree'
-                cssOpts:
-                    functions: false
             standard:
                 src: 'src/assets/images/sprites/1x/*.png'
                 destImg: 'temp/assets/images/sprites/1x-<%= sprite.options.timestamp %>.png'
                 destCSS: 'src/assets/styles/sprites/1x.styl'
                 imgPath: '../images/sprites/1x-<%= sprite.options.timestamp %>.png'
+                algorithm: 'binary-tree'
                 cssTemplate: 'src/assets/styles/sprites/1x.mustache'
             retina:
                 src: 'src/assets/images/sprites/2x/*.png'
                 destImg: 'temp/assets/images/sprites/2x-<%= sprite.options.timestamp %>.png'
                 destCSS: 'src/assets/styles/sprites/2x.styl'
                 imgPath: '../images/sprites/2x-<%= sprite.options.timestamp %>.png'
+                algorithm: 'binary-tree'
                 cssTemplate: 'src/assets/styles/sprites/2x.mustache'
 
         image:
@@ -88,7 +87,8 @@ module.exports = (grunt) ->
             options:
                 livereload: true
             default:
-                files: ['src/**/*.jade', 'src/**/*.styl', 'src/**/*.coffee']
-                tasks: ['clean:pre', 'sprite', 'image', 'stylus', 'coffee', 'jshint', 'min', 'jade', 'clean:post']
+                files: ['**/*.jade', '**/*.styl', '**/*.coffee']
+                tasks: ['stylus', 'coffee', 'jshint', 'min', 'jade', 'clean:post']
 
     grunt.registerTask 'default', ['connect', 'watch']
+    grunt.registerTask 'build', ['clean:pre', 'sprite', 'image', 'stylus', 'coffee', 'jshint', 'min', 'jade', 'clean:post']
