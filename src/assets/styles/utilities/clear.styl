@@ -4,11 +4,4 @@ html.html:root .clear
         clear both
 
     &--fix
-
-        &:before,
-        &:after
-            content ""
-            display table
-
-        &:after
-            clear both
+        clearfix()

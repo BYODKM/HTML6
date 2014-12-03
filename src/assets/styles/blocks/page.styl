@@ -2,4 +2,9 @@
     position relative
     margin 0 auto
     min-height 100%
-    clearfix()
+
+    &:before,
+    &:after
+        content ""
+        clear both
+        display table
