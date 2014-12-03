@@ -3,6 +3,7 @@ npm install --save-dev grunt
 npm install --save-dev grunt-contrib-clean
 npm install --save-dev grunt-contrib-coffee
 npm install --save-dev grunt-contrib-connect
+npm install --save-dev grunt-contrib-copy
 npm install --save-dev grunt-contrib-jade
 npm install --save-dev grunt-contrib-jshint
 npm install --save-dev grunt-contrib-stylus
