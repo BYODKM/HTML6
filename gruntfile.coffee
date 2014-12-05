@@ -13,7 +13,7 @@ module.exports = (grunt) ->
         sprite:
             options:
                 timestamp: '<%= Math.floor(Date.now() / 1000 / 60) %>'
-            standard:
+            legacy:
                 src: 'src/assets/images/sprites/1x/*.png'
                 destImg: 'temp/assets/images/sprites/1x-<%= sprite.options.timestamp %>.png'
                 destCSS: 'src/assets/styles/bases/sprites/1x.styl'
