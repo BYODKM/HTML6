@@ -1,0 +1,12 @@
+mixin hx
+
+    - hxCounter = hxCounter || 0
+    - hxCounter += 1
+
+    if (hxCounter > 6)
+        - hxCounter = 6
+
+    - hxTag = 'h' + hxCounter
+
+    #{hxTag}&attributes(attributes).hx
+        block
