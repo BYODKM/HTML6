@@ -8,21 +8,21 @@ module.exports = (grunt) ->
             pre:
                 src: ['dist/assets/images/sprites']
             post:
-                src: ['temp']
+                src: ['.tmp/assets']
 
         sprite:
             options:
                 timestamp: '<%= Math.floor(Date.now() / 1000 / 60) %>'
             legacy:
                 src: 'src/assets/images/sprites/1x/*.png'
-                destImg: 'temp/assets/images/sprites/1x-<%= sprite.options.timestamp %>.png'
+                destImg: '.tmp/assets/images/sprites/1x-<%= sprite.options.timestamp %>.png'
                 destCSS: 'src/assets/styles/bases/sprites/1x.styl'
                 imgPath: '../images/sprites/1x-<%= sprite.options.timestamp %>.png'
                 algorithm: 'binary-tree'
                 cssTemplate: 'src/assets/styles/bases/sprites/1x.mustache'
             retina:
                 src: 'src/assets/images/sprites/2x/*.png'
-                destImg: 'temp/assets/images/sprites/2x-<%= sprite.options.timestamp %>.png'
+                destImg: '.tmp/assets/images/sprites/2x-<%= sprite.options.timestamp %>.png'
                 destCSS: 'src/assets/styles/bases/sprites/2x.styl'
                 imgPath: '../images/sprites/2x-<%= sprite.options.timestamp %>.png'
                 algorithm: 'binary-tree'
@@ -32,7 +32,7 @@ module.exports = (grunt) ->
             sprites:
                 files: [
                     expand: true,
-                    cwd: 'temp/assets/images/sprites/',
+                    cwd: '.tmp/assets/images/sprites/',
                     src: ['**/*.png'],
                     dest: 'dist/assets/images/sprites/'
                     ]
@@ -54,15 +54,15 @@ module.exports = (grunt) ->
                 expand: true
                 cwd: 'src/assets/scripts/coffee/'
                 src: ['**/*.coffee']
-                dest: 'temp/assets/scripts/coffee/'
+                dest: '.tmp/assets/scripts/coffee/'
                 ext: (ext)-> return ext.replace(/coffee$/, 'js')
 
         jshint:
-            files: ['temp/assets/scripts/coffee/**/*.js']
+            files: ['.tmp/assets/scripts/coffee/**/*.js']
 
         min:
             scripts:
-                src: ['temp/assets/scripts/coffee/global/*.js', 'temp/assets/scripts/coffee/ready/*.js']
+                src: ['.tmp/assets/scripts/coffee/global/*.js', '.tmp/assets/scripts/coffee/ready/*.js']
                 dest: 'dist/assets/scripts/main.js'
 
         jade:
