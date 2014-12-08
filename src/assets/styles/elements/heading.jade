@@ -1,0 +1,12 @@
+mixin heading
+
+    - headingCounter = headingCounter || 0
+    - headingCounter += 1
+
+    if (headingCounter > 6)
+        - headingCounter = 6
+
+    - headingTag = 'h' + headingCounter
+
+    #{headingTag}&attributes(attributes).heading
+        block
