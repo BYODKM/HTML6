@@ -17,16 +17,16 @@ module.exports = (grunt) ->
                 src: 'src/assets/images/sprites/1x/*.png'
                 destImg: '.tmp/assets/images/sprites/1x-<%= sprite.options.timestamp %>.png'
                 destCSS: 'src/assets/styles/bases/sprites/1x.styl'
+                cssTemplate: 'src/assets/styles/bases/sprites/1x.mustache'
                 imgPath: '../images/sprites/1x-<%= sprite.options.timestamp %>.png'
                 algorithm: 'binary-tree'
-                cssTemplate: 'src/assets/styles/bases/sprites/1x.mustache'
             retina:
                 src: 'src/assets/images/sprites/2x/*.png'
                 destImg: '.tmp/assets/images/sprites/2x-<%= sprite.options.timestamp %>.png'
                 destCSS: 'src/assets/styles/bases/sprites/2x.styl'
+                cssTemplate: 'src/assets/styles/bases/sprites/2x.mustache'
                 imgPath: '../images/sprites/2x-<%= sprite.options.timestamp %>.png'
                 algorithm: 'binary-tree'
-                cssTemplate: 'src/assets/styles/bases/sprites/2x.mustache'
 
         image:
             sprites:
