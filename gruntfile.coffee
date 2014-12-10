@@ -8,7 +8,7 @@ module.exports = (grunt) ->
             pre:
                 src: ['dist/assets/images/sprites']
             post:
-                src: ['.tmp/assets']
+                src: ['.tmp/*js', '.tmp/assets']
 
         sprite:
             options:
@@ -16,15 +16,15 @@ module.exports = (grunt) ->
             legacy:
                 src: 'src/assets/images/sprites/1x/*.png'
                 destImg: '.tmp/assets/images/sprites/1x-<%= sprite.options.timestamp %>.png'
-                destCSS: 'src/assets/styles/bases/sprites/1x.styl'
-                cssTemplate: 'src/assets/styles/bases/sprites/1x.mustache'
+                destCSS: 'src/assets/styles/sprites/1x.styl'
+                cssTemplate: 'src/assets/styles/sprites/1x.mustache'
                 imgPath: '../images/sprites/1x-<%= sprite.options.timestamp %>.png'
                 algorithm: 'binary-tree'
             retina:
                 src: 'src/assets/images/sprites/2x/*.png'
                 destImg: '.tmp/assets/images/sprites/2x-<%= sprite.options.timestamp %>.png'
-                destCSS: 'src/assets/styles/bases/sprites/2x.styl'
-                cssTemplate: 'src/assets/styles/bases/sprites/2x.mustache'
+                destCSS: 'src/assets/styles/sprites/2x.styl'
+                cssTemplate: 'src/assets/styles/sprites/2x.mustache'
                 imgPath: '../images/sprites/2x-<%= sprite.options.timestamp %>.png'
                 algorithm: 'binary-tree'
 
@@ -52,18 +52,24 @@ module.exports = (grunt) ->
         coffee:
             compile:
                 expand: true
-                cwd: 'src/assets/scripts/coffee/'
+                cwd: 'src/'
                 src: ['**/*.coffee']
-                dest: '.tmp/assets/scripts/coffee/'
+                dest: '.tmp/'
                 ext: (ext)-> return ext.replace(/coffee$/, 'js')
 
         jshint:
-            files: ['.tmp/assets/scripts/coffee/**/*.js']
+            files: ['.tmp/**/*.js']
 
-        min:
-            scripts:
-                src: ['.tmp/assets/scripts/coffee/global/*.js', '.tmp/assets/scripts/coffee/ready/*.js']
-                dest: 'dist/assets/scripts/main.js'
+        uglify:
+            assets:
+                files: 'dist/assets/scripts/main.js' : ['.tmp/assets/scripts/coffee/global/*.js', '.tmp/assets/scripts/coffee/ready/*.js']
+            controllers:
+                files: [
+                    expand: true,
+                    cwd: '.tmp/',
+                    src: '*.js',
+                    dest: 'dist/'
+                    ]
 
         jade:
             options:
@@ -88,7 +94,7 @@ module.exports = (grunt) ->
                 livereload: true
             default:
                 files: ['**/*.jade', '**/*.styl', '**/*.coffee']
-                tasks: ['stylus', 'coffee', 'jshint', 'min', 'jade', 'clean:post']
+                tasks: ['stylus', 'coffee', 'jshint', 'uglify', 'jade', 'clean:post']
 
     grunt.registerTask 'default', ['connect', 'watch']
-    grunt.registerTask 'build', ['clean:pre', 'sprite', 'image', 'stylus', 'coffee', 'jshint', 'min', 'jade', 'clean:post']
+    grunt.registerTask 'build', ['clean:pre', 'sprite', 'image', 'stylus', 'coffee', 'jshint', 'uglify', 'jade', 'clean:post']
