@@ -8,7 +8,7 @@ module.exports = (grunt) ->
             pre:
                 src: ['dist/assets/images/sprites']
             post:
-                src: ['.tmp/*js', '.tmp/assets']
+                src: ['.tmp/*']
 
         sprite:
             options:
@@ -33,7 +33,7 @@ module.exports = (grunt) ->
                 files: [
                     expand: true,
                     cwd: '.tmp/assets/images/sprites/',
-                    src: ['**/*.png'],
+                    src: ['*.png'],
                     dest: 'dist/assets/images/sprites/'
                     ]
             others:
@@ -67,7 +67,7 @@ module.exports = (grunt) ->
                 files: [
                     expand: true,
                     cwd: '.tmp/',
-                    src: '*.js',
+                    src: ['**/*.js', '!assets/**/*.js'],
                     dest: 'dist/'
                     ]
 
