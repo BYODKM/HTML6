@@ -85,7 +85,7 @@ module.exports = (grunt) ->
             options:
                 data: (filepath)-> return filepath: filepath
                 basedir: __dirname + '/src'
-                pretty: true
+                pretty: false
             compile:
                 expand: true
                 cwd: 'src/'
