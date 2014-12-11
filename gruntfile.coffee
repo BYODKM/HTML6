@@ -107,4 +107,4 @@ module.exports = (grunt) ->
                 tasks: ['stylus', 'coffee', 'jshint', 'uglify', 'jade', 'clean:post']
 
     grunt.registerTask 'serve', ['connect', 'watch']
-    grunt.registerTask 'build', ['clean:pre', 'bower', 'sprite', 'image', 'stylus', 'coffee', 'jshint', 'uglify', 'jade', 'clean:post']
+    grunt.registerTask 'build', ['clean:pre', 'bower', 'copy', 'sprite', 'image', 'stylus', 'coffee', 'jshint', 'uglify', 'jade', 'clean:post']
