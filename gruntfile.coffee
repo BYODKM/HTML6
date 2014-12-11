@@ -15,6 +15,11 @@ module.exports = (grunt) ->
                 options:
                     copy: false
 
+        copy:
+            normalize:
+                src: 'bower_components/normalize.css/normalize.css'
+                dest: 'src/assets/styles/scaffolds/normalize.styl'
+
         sprite:
             options:
                 timestamp: '<%= Math.floor(Date.now() / 1000 / 60) %>'
