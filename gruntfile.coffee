@@ -10,6 +10,11 @@ module.exports = (grunt) ->
             post:
                 src: ['.tmp/*']
 
+        bower:
+            install:
+                options:
+                    copy: false
+
         sprite:
             options:
                 timestamp: '<%= Math.floor(Date.now() / 1000 / 60) %>'
@@ -96,5 +101,5 @@ module.exports = (grunt) ->
                 files: ['**/*.jade', '**/*.styl', '**/*.coffee']
                 tasks: ['stylus', 'coffee', 'jshint', 'uglify', 'jade', 'clean:post']
 
-    grunt.registerTask 'default', ['connect', 'watch']
-    grunt.registerTask 'build', ['clean:pre', 'sprite', 'image', 'stylus', 'coffee', 'jshint', 'uglify', 'jade', 'clean:post']
+    grunt.registerTask 'serve', ['connect', 'watch']
+    grunt.registerTask 'build', ['clean:pre', 'bower', 'sprite', 'image', 'stylus', 'coffee', 'jshint', 'uglify', 'jade', 'clean:post']
