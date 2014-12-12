@@ -106,5 +106,5 @@ module.exports = (grunt) ->
                 files: ['**/*.jade', '**/*.styl', '**/*.coffee']
                 tasks: ['stylus', 'coffee', 'jshint', 'uglify', 'jade', 'clean:post']
 
-    grunt.registerTask 'serve', ['connect', 'watch']
     grunt.registerTask 'build', ['clean:pre', 'bower', 'copy', 'sprite', 'image', 'stylus', 'coffee', 'jshint', 'uglify', 'jade', 'clean:post']
+    grunt.registerTask 'serve', ['connect', 'watch']
