@@ -1,9 +1,10 @@
 {{#items}}
 .img__{{name}}
+    padding-top {{px.height}} * 0.5
+    width {{px.width}} * 0.5
+    height {{px.height}} * 0.5
     background-image url("{{{escaped_image}}}")
     background-size {{px.total_width}} * 0.5 {{px.total_height}} * 0.5
     background-position {{px.offset_x}} * 0.5 {{px.offset_y}} * 0.5
-    width {{px.width}} * 0.5
-    height {{px.height}} * 0.5
 
 {{/items}}
