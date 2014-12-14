@@ -55,6 +55,8 @@ module.exports = (grunt) ->
                     ]
 
         stylus:
+            options:
+                compress: true
             compile:
                 files:
                     'dist/assets/styles/main.css': ['src/assets/styles/main.styl']
