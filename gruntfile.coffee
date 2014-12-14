@@ -24,18 +24,18 @@ module.exports = (grunt) ->
             options:
                 timestamp: '<%= Math.floor(Date.now() / 1000 / 60) %>'
             legacy:
-                src: 'src/assets/images/sprites/1x/*.png'
-                destImg: '.tmp/assets/images/sprites/1x-<%= sprite.options.timestamp %>.png'
-                destCSS: 'src/assets/styles/sprites/1x.styl'
-                cssTemplate: 'src/assets/styles/sprites/1x.mustache'
-                imgPath: '../images/sprites/1x-<%= sprite.options.timestamp %>.png'
+                src: 'src/assets/images/sprites/x1/*.png'
+                destImg: '.tmp/assets/images/sprites/x1-<%= sprite.options.timestamp %>.png'
+                destCSS: 'src/assets/styles/sprites/x1.styl'
+                cssTemplate: 'src/assets/styles/sprites/x1.mustache'
+                imgPath: '../images/sprites/x1-<%= sprite.options.timestamp %>.png'
                 algorithm: 'binary-tree'
             retina:
-                src: 'src/assets/images/sprites/2x/*.png'
-                destImg: '.tmp/assets/images/sprites/2x-<%= sprite.options.timestamp %>.png'
-                destCSS: 'src/assets/styles/sprites/2x.styl'
-                cssTemplate: 'src/assets/styles/sprites/2x.mustache'
-                imgPath: '../images/sprites/2x-<%= sprite.options.timestamp %>.png'
+                src: 'src/assets/images/sprites/x2/*.png'
+                destImg: '.tmp/assets/images/sprites/x2-<%= sprite.options.timestamp %>.png'
+                destCSS: 'src/assets/styles/sprites/x2.styl'
+                cssTemplate: 'src/assets/styles/sprites/x2.mustache'
+                imgPath: '../images/sprites/x2-<%= sprite.options.timestamp %>.png'
                 algorithm: 'binary-tree'
 
         image:
