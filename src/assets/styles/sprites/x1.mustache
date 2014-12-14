@@ -1,10 +1,13 @@
+/* 1x */
 {{#items}}
+
 .x1__{{name}}
+    display block
     padding-top {{px.height}}
     width {{px.width}}
-    height {{px.height}}
+    height 0
+    overflow hidden
     background-image url("{{{escaped_image}}}")
     background-size {{px.total_width}} {{px.total_height}}
     background-position {{px.offset_x}} {{px.offset_y}}
-
 {{/items}}
