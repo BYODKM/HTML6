@@ -1,15 +1,19 @@
-# Sprites Image Readme
+# Instructions
 
-## Usage
+## File Name
+
+2x images must have a "-2x" suffix.
+
+## How To Use
 
 ### In Jade:
 
-    +img(src="x2__FileName.png" alt="AltText")
+    +img(src="FileName-2x.png" alt="AltText")
 
 ### In Stylus:
 
     .foo
-        @extend .x2__FileName
+        @extend .img__FileName-2x
 
 No need to write a path name or sizes in both cases.
 

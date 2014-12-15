@@ -30,5 +30,5 @@ node_modules
 dist
 bower_components
 normalize.styl
-x1.styl
-x2.styl
+1x.styl
+2x.styl
