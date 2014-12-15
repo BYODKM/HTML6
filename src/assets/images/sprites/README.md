@@ -1,8 +1,8 @@
-# Instructions
+# Sprites Mixin
 
 ## File Name
 
-2x images must have a "-2x" suffix.
+- 2x images must have a "-2x" suffix.
 
 ## How To Use
 
@@ -15,8 +15,8 @@
     .foo
         @extend .img__FileName-2x
 
-No need to write a path name or sizes in both cases.
+- No need to write a path name or sizes in both cases.
 
 ## Support Browsers
 
-IE 9+ and others.
+- IE 9+ and others.
