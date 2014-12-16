@@ -1,7 +1,5 @@
 module.exports = (grunt) ->
 
-    require('load-grunt-tasks')(grunt)
-
     grunt.initConfig
 
         clean:
@@ -25,20 +23,20 @@ module.exports = (grunt) ->
 
         sprite:
             options:
-                timestamp: '<%= Math.floor(Date.now() / 1000 / 60) %>'
-            legacy:
+                stamp: '<%= Math.floor(Date.now() / 1000 / 60) %>'
+            normal:
                 src: 'src/assets/images/sprites/1x/*.png'
-                destImg: '.tmp/assets/images/sprites/1x-<%= sprite.options.timestamp %>.png'
+                destImg: '.tmp/assets/images/sprites/1x-<%= sprite.options.stamp %>.png'
                 destCSS: 'src/assets/styles/sprites/1x.styl'
                 cssTemplate: 'src/assets/styles/sprites/1x.mustache'
-                imgPath: '../images/sprites/1x-<%= sprite.options.timestamp %>.png'
+                imgPath: '../images/sprites/1x-<%= sprite.options.stamp %>.png'
                 algorithm: 'binary-tree'
             retina:
                 src: 'src/assets/images/sprites/2x/*.png'
-                destImg: '.tmp/assets/images/sprites/2x-<%= sprite.options.timestamp %>.png'
+                destImg: '.tmp/assets/images/sprites/2x-<%= sprite.options.stamp %>.png'
                 destCSS: 'src/assets/styles/sprites/2x.styl'
                 cssTemplate: 'src/assets/styles/sprites/2x.mustache'
-                imgPath: '../images/sprites/2x-<%= sprite.options.timestamp %>.png'
+                imgPath: '../images/sprites/2x-<%= sprite.options.stamp %>.png'
                 algorithm: 'binary-tree'
 
         image:
@@ -73,7 +71,7 @@ module.exports = (grunt) ->
                 ext: (ext)-> return ext.replace(/coffee$/, 'js')
 
         jshint:
-            files: ['.tmp/**/*.js', '.tmp/assets/scripts/vendors/*.js']
+            files: ['.tmp/**/*.js', '!.tmp/assets/scripts/vendors/*.js']
 
         uglify:
             main:
@@ -95,7 +93,7 @@ module.exports = (grunt) ->
                 data: (filepath)-> return filepath: filepath
                 basedir: __dirname + '/src'
                 pretty: false
-            compile:
+            html:
                 expand: true
                 cwd: 'src/'
                 src: ['**/*.jade', '!assets/**/*.jade']
@@ -111,9 +109,29 @@ module.exports = (grunt) ->
         watch:
             options:
                 livereload: true
+            stylus:
+                files: ['**/*.styl']
+                tasks: ['stylus']
+            coffee:
+                files: ['**/*.coffee']
+                tasks: ['coffee', 'jshint', 'uglify']
+            jade:
+                files: ['**/*.jade']
+                tasks: ['jade']
             default:
-                files: ['**/*.jade', '**/*.styl', '**/*.coffee']
-                tasks: ['stylus', 'coffee', 'jshint', 'uglify', 'jade', 'clean:post']
+                files: ['**/*.styl', '**/*.coffee', '**/*.jade']
+                tasks: ['clean:post']
 
-    grunt.registerTask 'build', ['clean:pre', 'bower', 'copy', 'sprite', 'image', 'stylus', 'coffee', 'jshint', 'uglify', 'jade', 'clean:post']
+    require('load-grunt-tasks')(grunt)
+
+    grunt.registerTask 'build', [
+        'clean:pre',
+        'bower', 'copy',
+        'sprite', 'image',
+        'stylus',
+        'coffee', 'jshint', 'uglify',
+        'jade',
+        'clean:post'
+        ]
+
     grunt.registerTask 'serve', ['connect', 'watch']
