@@ -19,7 +19,7 @@ module.exports = (grunt) ->
                 dest: 'src/assets/styles/scaffolds/normalize.styl'
             fastclick:
                 src: 'bower_components/fastclick/lib/fastclick.js'
-                dest: 'src/assets/scripts/main/vendors/fastclick.js'
+                dest: 'src/assets/scripts/vendors/fastclick.js'
 
         sprite:
             options:
@@ -76,8 +76,8 @@ module.exports = (grunt) ->
         uglify:
             main:
                 files: 'public_html/assets/scripts/main.js' : [
-                    'src/assets/scripts/main/vendors/*.js',
-                    '.tmp/assets/scripts/main/coffee/global/*.js'
+                    'src/assets/scripts/vendors/*.js',
+                    '.tmp/assets/scripts/coffee/*.js'
                     ]
             controllers:
                 files: [
