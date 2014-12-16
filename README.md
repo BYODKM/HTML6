@@ -3,6 +3,7 @@
 My Front-end Boilerplate.
 
     $ git clone https://github.com/BYODKM/3000.git
+    $ cd 3000
     $ npm install
     $ grunt build
     $ grunt serve
