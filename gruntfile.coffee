@@ -6,7 +6,7 @@ module.exports = (grunt) ->
 
         clean:
             pre:
-                src: ['dist/assets/images/sprites']
+                src: ['public_html/assets/images/sprites']
             post:
                 src: ['.tmp/*']
 
@@ -47,14 +47,14 @@ module.exports = (grunt) ->
                     expand: true,
                     cwd: '.tmp/assets/images/sprites/',
                     src: ['*.png'],
-                    dest: 'dist/assets/images/sprites/'
+                    dest: 'public_html/assets/images/sprites/'
                     ]
             others:
                 files: [
                     expand: true,
                     cwd: 'src/assets/images/others/',
                     src: ['**/*.{png,jpg,gif,svg}'],
-                    dest: 'dist/assets/images/others/'
+                    dest: 'public_html/assets/images/others/'
                     ]
 
         stylus:
@@ -62,7 +62,7 @@ module.exports = (grunt) ->
                 compress: true
             compile:
                 files:
-                    'dist/assets/styles/main.css': ['src/assets/styles/main.styl']
+                    'public_html/assets/styles/main.css': ['src/assets/styles/main.styl']
 
         coffee:
             compile:
@@ -77,7 +77,7 @@ module.exports = (grunt) ->
 
         uglify:
             main:
-                files: 'dist/assets/scripts/main.js' : [
+                files: 'public_html/assets/scripts/main.js' : [
                     '.tmp/assets/scripts/vendors/*.js',
                     '.tmp/assets/scripts/coffee/global/*.js',
                     '.tmp/assets/scripts/coffee/ready/*.js'
@@ -87,7 +87,7 @@ module.exports = (grunt) ->
                     expand: true,
                     cwd: '.tmp/',
                     src: ['**/*.js', '!assets/**/*.js'],
-                    dest: 'dist/'
+                    dest: 'public_html/'
                     ]
 
         jade:
@@ -99,14 +99,14 @@ module.exports = (grunt) ->
                 expand: true
                 cwd: 'src/'
                 src: ['**/*.jade', '!assets/**/*.jade']
-                dest: 'dist/'
+                dest: 'public_html/'
                 ext: '.html'
 
         connect:
             server:
                 options:
                     port: '3000'
-                    base: 'dist/'
+                    base: 'public_html/'
 
         watch:
             options:

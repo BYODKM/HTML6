@@ -27,7 +27,7 @@ node_modules
 # Users Environment Variables
 .lock-wscript
 
-dist
+public_html
 bower_components
 normalize.styl
 1x.styl
