@@ -1,0 +1,72 @@
+.rating
+    color gold
+    text-shadow 1px 1px 1px silver
+
+    &:after
+        content "　"
+
+    &:hover .rating__segue__label:not(.is-readonly):after
+        display none !important
+
+    &__segue
+
+        &__label
+            position relative
+            display inline-block
+            line-height 1.25em
+
+            cursor pointer
+
+            &:before
+            &:after
+                content "★"
+
+            &:after
+                position absolute
+                left 0
+                top 0
+                display block
+                width 0.5em
+                overflow hidden
+                text-shadow none
+
+            &.is-half:after
+                color gold
+
+            &.is-readonly
+                pointer-events none
+
+            &:not(.is-readonly)
+
+                &:hover ~ .rating__segue
+                    @media (min-device-width: 1024px)
+                        color silver
+
+                &:active
+                    @media (min-device-width: 1024px)
+                        color darken(gold, 10%)
+
+            &.is-zero
+                color transparent !important
+
+                &:before
+                    content "　"
+
+                &:after
+                    display none !important
+
+    &__input
+        display none !important
+
+        &:checked + span
+
+            .rating__segue
+                color silver
+
+                &:hover
+                    @media (min-device-width: 1024px)
+                        color gold
+
+                &:hover .rating__segue__label.is-readonly
+                    @media (min-device-width: 1024px)
+                        color silver

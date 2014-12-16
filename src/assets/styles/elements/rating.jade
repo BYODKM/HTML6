@@ -1,0 +1,51 @@
+mixin rating
+
+    - ratingId = ratingId || 0
+    - ratingId += 1
+
+    - var stars = attributes.stars || 5
+    - attributes.stars = null
+
+    - var max = attributes.max || stars
+    - attributes.max = null
+
+    - var value = attributes.value || 0
+    - attributes.value = null
+
+    - var integer = Math.floor(value / max * stars)
+    - var round = value / max * stars - integer
+    if (round >= 0.5)
+        - var isOverHalf = true
+
+    - var name = (attributes.name) ? attributes.name : "rating--" + ratingId
+    - attributes.name = null
+
+    - var readonly = attributes.readonly
+    - attributes.readonly = null
+
+    if (readonly == "true" || readonly == "readonly")
+        - readonly = true
+    else
+        - readonly = false
+
+    span&attributes(attributes).rating
+        - for (var index = 0; index <= stars; ++index)
+            input.rating__input(
+                type="radio"
+                name=name
+                id="rating--#{ratingId}-#{index}"
+                value=index
+                checked=((index == integer) ? true : false)
+                autocomplete="off"
+                )
+            | <span class="rating__segue">
+            label.rating__segue__label(
+                for="rating--#{ratingId}-#{index}"
+                class=((readonly)? "is-readonly" : "")
+                class=((index == 0) ? "is-zero" : "")
+                class=((index == (integer + 1) && isOverHalf) ? "is-half" : "")
+                )
+        - for (var index = 0; index <= stars; ++index)
+            | </span>
+        script.
+            rating('#{name}');
