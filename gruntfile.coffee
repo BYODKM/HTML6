@@ -19,6 +19,9 @@ module.exports = (grunt) ->
             normalize:
                 src: 'bower_components/normalize.css/normalize.css'
                 dest: 'src/assets/styles/scaffolds/normalize.styl'
+            fastclick:
+                src: 'bower_components/fastclick/lib/fastclick.js'
+                dest: '.tmp/assets/scripts/vendors/fastclick.js'
 
         sprite:
             options:
@@ -70,11 +73,15 @@ module.exports = (grunt) ->
                 ext: (ext)-> return ext.replace(/coffee$/, 'js')
 
         jshint:
-            files: ['.tmp/**/*.js']
+            files: ['.tmp/**/*.js', '.tmp/assets/scripts/vendors/*.js']
 
         uglify:
-            assets:
-                files: 'dist/assets/scripts/main.js' : ['.tmp/assets/scripts/coffee/global/*.js', '.tmp/assets/scripts/coffee/ready/*.js']
+            main:
+                files: 'dist/assets/scripts/main.js' : [
+                    '.tmp/assets/scripts/vendors/*.js',
+                    '.tmp/assets/scripts/coffee/global/*.js',
+                    '.tmp/assets/scripts/coffee/ready/*.js'
+                    ]
             controllers:
                 files: [
                     expand: true,
