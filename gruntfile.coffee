@@ -19,7 +19,7 @@ module.exports = (grunt) ->
                 dest: 'src/assets/styles/scaffolds/normalize.styl'
             fastclick:
                 src: 'bower_components/fastclick/lib/fastclick.js'
-                dest: '.tmp/assets/scripts/vendors/fastclick.js'
+                dest: 'src/assets/scripts/main/vendors/fastclick.js'
 
         sprite:
             options:
@@ -71,14 +71,13 @@ module.exports = (grunt) ->
                 ext: (ext)-> return ext.replace(/coffee$/, 'js')
 
         jshint:
-            files: ['.tmp/**/*.js', '!.tmp/assets/scripts/vendors/*.js']
+            files: ['.tmp/**/*.js']
 
         uglify:
             main:
                 files: 'public_html/assets/scripts/main.js' : [
-                    '.tmp/assets/scripts/vendors/*.js',
-                    '.tmp/assets/scripts/coffee/global/*.js',
-                    '.tmp/assets/scripts/coffee/ready/*.js'
+                    'src/assets/scripts/main/vendors/*.js',
+                    '.tmp/assets/scripts/main/coffee/global/*.js'
                     ]
             controllers:
                 files: [
@@ -114,13 +113,10 @@ module.exports = (grunt) ->
                 tasks: ['stylus']
             coffee:
                 files: ['**/*.coffee']
-                tasks: ['coffee', 'jshint', 'uglify']
+                tasks: ['coffee', 'jshint', 'uglify', 'clean:post']
             jade:
                 files: ['**/*.jade']
                 tasks: ['jade']
-            default:
-                files: ['**/*.styl', '**/*.coffee', '**/*.jade']
-                tasks: ['clean:post']
 
     require('load-grunt-tasks')(grunt)
 
