@@ -1,0 +1,1 @@
+window.NS = window.NS || {}

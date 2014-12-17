@@ -1,4 +1,4 @@
-window.rating = (nameAttr)->
+window.NS.rating = (nameAttr)->
 
     checkboxes = document.getElementsByName(nameAttr)
     scope = checkboxes[0].parentNode

@@ -1,4 +1,4 @@
-window.removeClass = (elm, str)->
+window.NS.removeClass = (elm, str)->
     a = []
     s = str.replace('.', '')
     a = elm.className.split(' ')
