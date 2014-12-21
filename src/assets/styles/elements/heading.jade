@@ -1,6 +1,10 @@
 mixin heading
 
-    - headingCounter = headingCounter || 0
+    if (attributes.level)
+        - var level = attributes.level - 1
+        - attributes.level = null
+
+    - headingCounter = level || headingCounter || 0
     - headingCounter += 1
 
     if (headingCounter > 6)
