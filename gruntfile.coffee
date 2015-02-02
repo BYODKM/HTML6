@@ -20,6 +20,9 @@ module.exports = (grunt) ->
             fastclick:
                 src: 'bower_components/fastclick/lib/fastclick.js'
                 dest: 'src/assets/scripts/vendors/fastclick.js'
+            webkitGradient:
+                src: 'bower_components/webkit-gradient.styl/src/webkit-gradient.styl'
+                dest: 'src/assets/styles/mixins/webkit-gradient.styl'
 
         sprite:
             options:
