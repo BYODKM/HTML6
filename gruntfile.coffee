@@ -1,11 +1,13 @@
 module.exports = (grunt) ->
 
+    require('load-grunt-tasks')(grunt)
+
     grunt.initConfig
 
         clean:
-            pre:
-                src: ['public_html/assets/images/sprites']
-            post:
+            before:
+                src: ['bower_components', 'public_html/assets/images/sprites']
+            after:
                 src: ['.tmp/*']
 
         bower:
@@ -116,21 +118,19 @@ module.exports = (grunt) ->
                 tasks: ['stylus']
             coffee:
                 files: ['**/*.coffee']
-                tasks: ['coffee', 'jshint', 'uglify', 'clean:post']
+                tasks: ['coffee', 'jshint', 'uglify', 'clean:after']
             jade:
                 files: ['**/*.jade']
                 tasks: ['jade']
 
-    require('load-grunt-tasks')(grunt)
-
     grunt.registerTask 'build', [
-        'clean:pre',
+        'clean:before',
         'bower', 'copy',
         'sprite', 'image',
         'stylus',
         'coffee', 'jshint', 'uglify',
         'jade',
-        'clean:post'
+        'clean:after'
         ]
 
     grunt.registerTask 'serve', ['connect', 'watch']
