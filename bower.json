@@ -5,6 +5,6 @@
   "devDependencies": {
     "normalize.css": "~3.0.2",
     "fastclick": "~1.0.3",
-    "webkit-gradient.styl": "~1.0.1"
+    "webkit-gradient.styl": "~1.0.2"
   }
 }
