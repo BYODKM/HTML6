@@ -79,6 +79,10 @@ module.exports = (grunt) ->
             files: ['.tmp/**/*.js']
 
         uglify:
+            options:
+              mangle: true
+              compress: true
+              beautify: false
             main:
                 files: 'public_html/assets/scripts/main.js' : [
                     'src/assets/scripts/vendors/*.js',
