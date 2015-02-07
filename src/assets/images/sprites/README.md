@@ -8,12 +8,12 @@
 
 ### In Jade:
 
-    +img(src="FileName-2x.png" alt="AltText")
+  +img(src="FileName-2x.png" alt="AltText")
 
 ### In Stylus:
 
-    .foo
-        @extend .img__FileName-2x
+  .foo
+    @extend .img__FileName-2x
 
 - No need to write a path name or sizes in both cases.
 

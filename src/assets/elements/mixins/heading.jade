@@ -1,16 +1,16 @@
 mixin heading
 
-    if (attributes.level)
-        - var level = attributes.level - 1
-        - attributes.level = null
+  if (attributes.level)
+    - var level = attributes.level - 1
+    - attributes.level = null
 
-    - headingCounter = level || headingCounter || 0
-    - headingCounter += 1
+  - headingCounter = level || headingCounter || 0
+  - headingCounter += 1
 
-    if (headingCounter > 6)
-        - headingCounter = 6
+  if (headingCounter > 6)
+    - headingCounter = 6
 
-    - headingTag = 'h' + headingCounter
+  - headingTag = 'h' + headingCounter
 
-    #{headingTag}&attributes(attributes).heading
-        block
+  #{headingTag}&attributes(attributes).heading
+    block

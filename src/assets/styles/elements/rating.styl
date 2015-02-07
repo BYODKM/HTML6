@@ -1,72 +1,72 @@
 .rating
-    color gold
-    text-shadow 1px 1px 1px silver
+  color gold
+  text-shadow 1px 1px 1px silver
 
-    &:after
-        content "　"
+  &:after
+    content "　"
 
-    &:hover .rating__segue__label:not(.is-readonly):after
-        display none !important
+  &:hover .rating__segue__label:not(.is-readonly):after
+    display none !important
 
-    &__segue
+  &__segue
 
-        &__label
-            position relative
-            display inline-block
-            line-height 1.25em
+    &__label
+      position relative
+      display inline-block
+      line-height 1.25em
 
-            cursor pointer
+      cursor pointer
 
-            &:before
-            &:after
-                content "★"
+      &:before
+      &:after
+        content "★"
 
-            &:after
-                position absolute
-                left 0
-                top 0
-                display block
-                width 0.5em
-                overflow hidden
-                text-shadow none
+      &:after
+        position absolute
+        left 0
+        top 0
+        display block
+        width 0.5em
+        overflow hidden
+        text-shadow none
 
-            &.is-half:after
-                color gold
+      &.is-half:after
+        color gold
 
-            &.is-readonly
-                pointer-events none
+      &.is-readonly
+        pointer-events none
 
-            &:not(.is-readonly)
+      &:not(.is-readonly)
 
-                &:hover ~ .rating__segue
-                    @media (min-device-width: 1024px)
-                        color silver
+        &:hover ~ .rating__segue
+          @media (min-device-width: 1024px)
+            color silver
 
-                &:active
-                    @media (min-device-width: 1024px)
-                        color darken(gold, 10%)
+        &:active
+          @media (min-device-width: 1024px)
+            color darken(gold, 10%)
 
-            &.is-zero
-                color transparent !important
+      &.is-zero
+        color transparent !important
 
-                &:before
-                    content "　"
+        &:before
+          content "　"
 
-                &:after
-                    display none !important
+        &:after
+          display none !important
 
-    &__input
-        display none !important
+  &__input
+    display none !important
 
-        &:checked + span
+    &:checked + span
 
-            .rating__segue
-                color silver
+      .rating__segue
+        color silver
 
-                &:hover
-                    @media (min-device-width: 1024px)
-                        color gold
+        &:hover
+          @media (min-device-width: 1024px)
+            color gold
 
-                &:hover .rating__segue__label.is-readonly
-                    @media (min-device-width: 1024px)
-                        color silver
+        &:hover .rating__segue__label.is-readonly
+          @media (min-device-width: 1024px)
+            color silver

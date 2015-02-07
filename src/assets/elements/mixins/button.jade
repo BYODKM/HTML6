@@ -1,11 +1,11 @@
 mixin button
 
-    if (attributes.href)
-        a&attributes(attributes).button(ontouchstart="")
-            block
-    else if (attributes.for)
-        label&attributes(attributes).button(ontouchstart="")
-            block
-    else
-        button&attributes(attributes).button(ontouchstart="")
-            block
+  if (attributes.href)
+    a&attributes(attributes).button(ontouchstart="")
+      block
+  else if (attributes.for)
+    label&attributes(attributes).button(ontouchstart="")
+      block
+  else
+    button&attributes(attributes).button(ontouchstart="")
+      block

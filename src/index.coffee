@@ -1,10 +1,10 @@
 ready = ->
 
-    scope = document.getElementById('page--index')
-    if (!scope) then return
+  scope = document.getElementById('page--index')
+  if (!scope) then return
 
-    FastClick.attach(document.body)
+  FastClick.attach(document.body)
 
-    return
+  return
 
 document.addEventListener('DOMContentLoaded', ready, false)
