@@ -1,10 +1,10 @@
 # Sprites Mixin
 
-## File Name
+## Naming Convention
 
 - 2x images must have a "-2x" suffix.
 
-## How To Use
+## How to Use
 
 ### In Jade:
 

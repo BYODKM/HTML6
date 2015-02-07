@@ -19,7 +19,7 @@ module.exports = (grunt) ->
       normalize:
         src: 'bower_components/normalize.css/normalize.css'
         dest: 'src/assets/styles/scaffolds/normalize.styl'
-      nondestructiveResetCSS:
+      nondestructiveReset:
         src: 'bower_components/nondestructive-reset.css/src/nondestructive-reset.styl'
         dest: 'src/assets/styles/scaffolds/nondestructive-reset.styl'
       nondestructiveResetJade:
