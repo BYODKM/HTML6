@@ -35,3 +35,4 @@ normalize.styl
 fastclick.js
 webkit-gradient.styl
 nondestructive-reset.styl
+nondestructive-reset.jade
