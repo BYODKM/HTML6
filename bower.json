@@ -3,8 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "devDependencies": {
-    "normalize.css": "~3.0.2",
     "fastclick": "~1.0.3",
+    "nondestructive-reset.css": "~1.0.1",
+    "normalize.css": "~3.0.2",
     "webkit-gradient.styl": "~1.0.2"
   }
 }
