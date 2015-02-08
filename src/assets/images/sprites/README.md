@@ -1,4 +1,4 @@
-# Sprites Mixin
+# Image Sprites Mixin
 
 ## Naming Convention
 
@@ -8,15 +8,15 @@
 
 ### In Jade:
 
-  +img(src="FileName-2x.png" alt="AltText")
+  +image(src="FileName-2x.png" alt="AltText")
 
 ### In Stylus:
 
   .foo
-    @extend .img__FileName-2x
+    @extend .image__FileName-2x
 
-- No need to write a path name or sizes in both cases.
+No need to write __width__, __height__ and even __path__ in both cases.
 
-## Support Browsers
+## Browser Support
 
 - IE 9+ and others.

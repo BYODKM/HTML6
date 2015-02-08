@@ -1,4 +1,4 @@
-mixin img
+mixin image
 
   - var src = attributes.src.replace(/.png$/, "")
   - attributes.src = null
@@ -6,8 +6,8 @@ mixin img
   - var alt = attributes.alt
   - attributes.alt = null
 
-  span&attributes(attributes).img
-    span.img__self(
-      class="img__" + src
+  span&attributes(attributes).image
+    span.image__self(
+      class="image__" + src
       )
       | #{alt}
