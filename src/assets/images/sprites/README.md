@@ -4,18 +4,20 @@
 
 - 2x images must have a "-2x" suffix.
 
-## How to Use
+## Usage
 
 ### In Jade:
 
-  +image(src="FileName-2x.png" alt="AltText")
+	+image(src="FileName-2x.png" alt="AltText")
 
-### In Stylus:
+### From Stylus:
 
-  .foo
-    @extend .image__FileName-2x
+	.foo
+	  @extend .image__FileName-2x
 
-No need to write __width__, __height__ and even __path__ in both cases.
+## Bonus
+
+- No need to write __width__ or __height__ and even __path__ in both cases.
 
 ## Browser Support
 
