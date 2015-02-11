@@ -5,8 +5,10 @@ module.exports = (grunt) ->
   grunt.initConfig
 
     clean:
+      bower:
+        src: ['bower_components']
       before:
-        src: ['bower_components', 'public_html/assets/images/sprites']
+        src: ['public_html/assets/images/sprites']
       after:
         src: ['.tmp/*']
 
@@ -25,12 +27,15 @@ module.exports = (grunt) ->
       nondestructiveResetJade:
         src: 'bower_components/nondestructive-reset.css/helper/nondestructive-reset.jade'
         dest: 'src/assets/elements/resets/nondestructive-reset.jade'
-      fastclick:
-        src: 'bower_components/fastclick/lib/fastclick.js'
-        dest: 'src/assets/scripts/vendors/fastclick.js'
       webkitGradient:
         src: 'bower_components/webkit-gradient.styl/webkit-gradient.styl'
         dest: 'src/assets/styles/mixins/webkit-gradient.styl'
+      globalize:
+        src: 'bower_components/globalize.css/dist/globalize.styl'
+        dest: 'src/assets/styles/utilities/globalize.styl'
+      fastclick:
+        src: 'bower_components/fastclick/lib/fastclick.js'
+        dest: 'src/assets/scripts/vendors/fastclick.js'
 
     sprite:
       options:
@@ -119,6 +124,8 @@ module.exports = (grunt) ->
         options:
           port: '3000'
           base: 'public_html/'
+          open:
+            target: 'http://localhost:<%= connect.server.options.port %>'
 
     watch:
       options:
@@ -133,9 +140,10 @@ module.exports = (grunt) ->
         files: ['**/*.jade']
         tasks: ['jade']
 
+  grunt.registerTask 'clone', ['clean:bower', 'bower', 'copy']
+
   grunt.registerTask 'build', [
     'clean:before',
-    'bower', 'copy',
     'sprite', 'image',
     'stylus',
     'coffee', 'jshint', 'uglify',
