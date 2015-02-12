@@ -27,9 +27,9 @@ module.exports = (grunt) ->
       nondestructiveResetJade:
         src: 'bower_components/nondestructive-reset.css/helper/nondestructive-reset.jade'
         dest: 'src/assets/elements/resets/nondestructive-reset.jade'
-      webkitGradient:
-        src: 'bower_components/webkit-gradient.styl/webkit-gradient.styl'
-        dest: 'src/assets/styles/mixins/webkit-gradient.styl'
+      legacyGradient:
+        src: 'bower_components/legacy-gradient.styl/legacy-gradient.styl'
+        dest: 'src/assets/styles/mixins/legacy-gradient.styl'
       globalize:
         src: 'bower_components/globalize.css/dist/globalize.styl'
         dest: 'src/assets/styles/utilities/globalize.styl'

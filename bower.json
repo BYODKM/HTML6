@@ -7,6 +7,6 @@
     "globalize.css": "~1.0.1",
     "nondestructive-reset.css": "~1.0.5",
     "normalize.css": "~3.0.2",
-    "webkit-gradient.styl": "~1.0.3"
+    "legacy-gradient.styl": "~1.0.0"
   }
 }

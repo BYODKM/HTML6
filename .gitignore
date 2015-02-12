@@ -33,7 +33,7 @@ normalize.styl
 1x.styl
 2x.styl
 fastclick.js
-webkit-gradient.styl
+legacy-gradient.styl
 nondestructive-reset.styl
 nondestructive-reset.jade
 globalize.styl
