@@ -42,18 +42,18 @@ module.exports = (grunt) ->
         stamp: '<%= Math.floor(Date.now() / 1000 / 60) %>'
       normal:
         src: 'src/assets/images/sprites/1x/*.png'
-        destImg: '.tmp/assets/images/sprites/1x-<%= sprite.options.stamp %>.png'
-        destCSS: 'src/assets/styles/sprites/1x.styl'
         cssTemplate: 'src/assets/styles/sprites/1x.mustache'
-        imgPath: '../images/sprites/1x-<%= sprite.options.stamp %>.png'
         algorithm: 'binary-tree'
+        destCSS: 'src/assets/styles/sprites/1x.styl'
+        destImg: '.tmp/assets/images/sprites/1x-<%= sprite.options.stamp %>.png'
+        imgPath: '../images/sprites/1x-<%= sprite.options.stamp %>.png'
       retina:
         src: 'src/assets/images/sprites/2x/*.png'
-        destImg: '.tmp/assets/images/sprites/2x-<%= sprite.options.stamp %>.png'
-        destCSS: 'src/assets/styles/sprites/2x.styl'
         cssTemplate: 'src/assets/styles/sprites/2x.mustache'
-        imgPath: '../images/sprites/2x-<%= sprite.options.stamp %>.png'
         algorithm: 'binary-tree'
+        destCSS: 'src/assets/styles/sprites/2x.styl'
+        destImg: '.tmp/assets/images/sprites/2x-<%= sprite.options.stamp %>.png'
+        imgPath: '../images/sprites/2x-<%= sprite.options.stamp %>.png'
 
     image:
       sprites:
