@@ -7,7 +7,7 @@ mixin image
   - attributes.alt = null
 
   span&attributes(attributes).image
-    span.image__self(
+    span(
       class="image__" + src
       )
       | #{alt}
