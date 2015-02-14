@@ -1,0 +1,56 @@
+mixin hx
+
+  - hxLevel = hxLevel || 0
+  - hxLevel += 1
+
+  if (hxLevel > 6)
+    - hxLevel = 6
+
+  - hxTag = 'h' + hxLevel
+
+  #{hxTag}&attributes(attributes)(
+    class=hxTag
+  )
+    block
+
+mixin h1
+
+  - hxLevel = 1
+
+  h1.h1&attributes(attributes)
+    block
+
+mixin h2
+
+  - hxLevel = 2
+
+  h2.h2&attributes(attributes)
+    block
+
+mixin h3
+
+  - hxLevel = 3
+
+  h3.h3&attributes(attributes)
+    block
+
+mixin h4
+
+  - hxLevel = 4
+
+  h4.h4&attributes(attributes)
+    block
+
+mixin h5
+
+  - hxLevel = 5
+
+  h5.h5&attributes(attributes)
+    block
+
+mixin h6
+
+  - hxLevel = 6
+
+  h6.h6&attributes(attributes)
+    block

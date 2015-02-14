@@ -3,9 +3,8 @@ include /assets/elements/main
 doctype
 +html(lang="ja")
   +head
-    title
+    title Title
   +body
-    .page#page--index
-    script(src="index.js" charset="utf-8")
+    +hx Heading
     if (options.dev)
-      script(src="//localhost:35729/livereload.js")
+      script(src="//localhost:35729/livereload.js" charset="utf-8")
