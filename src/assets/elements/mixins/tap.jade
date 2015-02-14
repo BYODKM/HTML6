@@ -1,0 +1,11 @@
+mixin tap
+
+  if (attributes.href)
+    a&attributes(attributes).tap(ontouchstart="")
+      block
+  else if (attributes.for)
+    label&attributes(attributes).tap(ontouchstart="")
+      block
+  else
+    button&attributes(attributes).tap(ontouchstart="")
+      block
