@@ -7,9 +7,9 @@ module.exports = (grunt) ->
     clean:
       bower:
         src: ['bower_components']
-      before:
+      sprites:
         src: ['public_html/assets/images/sprites']
-      after:
+      tmp:
         src: ['.tmp/*']
 
     bower:
@@ -109,10 +109,25 @@ module.exports = (grunt) ->
 
     jade:
       options:
-        data: (filepath)-> return filepath: filepath
-        basedir: __dirname + '/src'
         pretty: false
-      html:
+        basedir: __dirname + '/src'
+      development:
+        options:
+          data: (filepath)->
+            return options:
+              filepath: filepath
+              dev: true
+        expand: true
+        cwd: 'src/'
+        src: ['**/*.jade', '!assets/**/*.jade']
+        dest: 'public_html/'
+        ext: '.html'
+      production:
+        options:
+          data: (filepath)->
+            return options:
+              filepath: filepath
+              dev: true
         expand: true
         cwd: 'src/'
         src: ['**/*.jade', '!assets/**/*.jade']
@@ -135,20 +150,29 @@ module.exports = (grunt) ->
         tasks: ['stylus']
       coffee:
         files: ['**/*.coffee']
-        tasks: ['coffee', 'jshint', 'uglify', 'clean:after']
+        tasks: ['coffee', 'jshint', 'uglify', 'clean:tmp']
       jade:
         files: ['**/*.jade']
         tasks: ['jade']
 
-  grunt.registerTask 'clone', ['clean:bower', 'bower', 'copy']
-
-  grunt.registerTask 'build', [
-    'clean:before',
-    'sprite', 'image',
-    'stylus',
-    'coffee', 'jshint', 'uglify',
-    'jade',
-    'clean:after'
+  grunt.registerTask 'clone', [
+    'clean:bower', 'bower', 'copy'
     ]
 
-  grunt.registerTask 'serve', ['connect', 'watch']
+  grunt.registerTask 'build', [
+    'clean:sprites', 'sprite', 'image'
+    'stylus'
+    'coffee', 'jshint', 'uglify', 'clean:tmp'
+    'jade:development'
+    ]
+
+  grunt.registerTask 'serve', [
+    'connect', 'watch'
+    ]
+
+  grunt.registerTask 'release', [
+    'clean:sprites', 'sprite', 'image'
+    'stylus'
+    'coffee', 'jshint', 'uglify', 'clean:tmp'
+    'jade:production'
+    ]

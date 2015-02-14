@@ -7,3 +7,5 @@ doctype
   +body
     .page#page--index
     script(src="index.js" charset="utf-8")
+    if (options.dev)
+      script(src="//localhost:35729/livereload.js")
