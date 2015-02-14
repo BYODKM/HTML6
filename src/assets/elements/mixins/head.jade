@@ -1,6 +1,6 @@
 mixin head
 
-  - var depth = filepath.split('/').length - 2
+  - var depth = options.filepath.split('/').length - 2
   - var root = ''
   - for (var i = 0; i < depth; ++i)
     - root += '../'
