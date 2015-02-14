@@ -1,11 +1,11 @@
 mixin tap
 
   if (attributes.href)
-    a&attributes(attributes).tap(ontouchstart="")
+    a&attributes(attributes).tap.a(ontouchstart="")
       block
   else if (attributes.for)
-    label&attributes(attributes).tap(ontouchstart="")
+    label&attributes(attributes).tap.label(ontouchstart="")
       block
   else
-    button&attributes(attributes).tap(ontouchstart="")
+    button&attributes(attributes).tap.button(ontouchstart="")
       block
