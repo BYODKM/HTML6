@@ -20,16 +20,16 @@ module.exports = (grunt) ->
     copy:
       normalize:
         src: 'bower_components/normalize.css/normalize.css'
-        dest: 'src/assets/styles/scaffolds/normalize.styl'
+        dest: 'src/assets/styles/scaffolds/resets/normalize.styl'
       nondestructiveReset:
         src: 'bower_components/nondestructive-reset.css/src/nondestructive-reset.styl'
-        dest: 'src/assets/styles/scaffolds/nondestructive-reset.styl'
+        dest: 'src/assets/styles/scaffolds/resets/nondestructive-reset.styl'
       nondestructiveResetJade:
         src: 'bower_components/nondestructive-reset.css/helper/nondestructive-reset.jade'
         dest: 'src/assets/elements/resets/nondestructive-reset.jade'
       legacyGradient:
         src: 'bower_components/legacy-gradient.styl/legacy-gradient.styl'
-        dest: 'src/assets/styles/mixins/legacy-gradient.styl'
+        dest: 'src/assets/styles/scaffolds/mixins/legacy-gradient.styl'
       globalize:
         src: 'bower_components/globalize.css/dist/globalize.styl'
         dest: 'src/assets/styles/utilities/globalize.styl'
@@ -42,16 +42,16 @@ module.exports = (grunt) ->
         stamp: '<%= Math.floor(Date.now() / 1000 / 60) %>'
       normal:
         src: 'src/assets/images/sprites/1x/*.png'
-        cssTemplate: 'src/assets/styles/sprites/1x.mustache'
+        cssTemplate: 'src/assets/styles/scaffolds/sprites/1x.mustache'
         algorithm: 'binary-tree'
-        destCSS: 'src/assets/styles/sprites/1x.styl'
+        destCSS: 'src/assets/styles/scaffolds/sprites/1x.styl'
         destImg: '.tmp/assets/images/sprites/1x-<%= sprite.options.stamp %>.png'
         imgPath: '../images/sprites/1x-<%= sprite.options.stamp %>.png'
       retina:
         src: 'src/assets/images/sprites/2x/*.png'
-        cssTemplate: 'src/assets/styles/sprites/2x.mustache'
+        cssTemplate: 'src/assets/styles/scaffolds/sprites/2x.mustache'
         algorithm: 'binary-tree'
-        destCSS: 'src/assets/styles/sprites/2x.styl'
+        destCSS: 'src/assets/styles/scaffolds/sprites/2x.styl'
         destImg: '.tmp/assets/images/sprites/2x-<%= sprite.options.stamp %>.png'
         imgPath: '../images/sprites/2x-<%= sprite.options.stamp %>.png'
 
