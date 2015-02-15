@@ -3,9 +3,12 @@ mixin tap
   if (attributes.href)
     a&attributes(attributes).tap.a(ontouchstart="")
       block
+      span.tap__highlight-color
   else if (attributes.for)
     label&attributes(attributes).tap.label(ontouchstart="")
       block
+      span.tap__highlight-color
   else
     button&attributes(attributes).tap.button(ontouchstart="")
       block
+      span.tap__highlight-color

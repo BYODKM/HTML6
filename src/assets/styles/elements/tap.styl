@@ -1,0 +1,16 @@
+.tap
+  position relative
+
+  &:active &__highlight-color
+    display block
+
+  &__highlight-color
+    position absolute
+    top -2px
+    right -2px
+    bottom -2px
+    left -2px
+    z-index 1000
+    display none
+    background-color rgba(blue, 0.1)
+    border-radius 4px
