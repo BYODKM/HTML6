@@ -1,10 +1,10 @@
 mixin tap
 
-  if (attributes.href)
+  if (attributes.href || attributes.href === "")
     a&attributes(attributes).tap.a(ontouchstart="")
       block
       span.tap__highlight-color
-  else if (attributes.for)
+  else if (attributes.for || attributes.for === "")
     label&attributes(attributes).tap.label(ontouchstart="")
       block
       span.tap__highlight-color
