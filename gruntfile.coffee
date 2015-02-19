@@ -93,8 +93,8 @@ module.exports = (grunt) ->
         beautify: false
       main:
         files: 'public_html/assets/scripts/main.js' : [
-          'src/assets/scripts/vendors/*.js',
-          '.tmp/assets/scripts/coffee/*.js'
+          'src/assets/scripts/global/vendors/*.js',
+          '.tmp/assets/scripts/global/coffee/*.js'
           ]
       controllers:
         files: [
