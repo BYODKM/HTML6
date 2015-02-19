@@ -1,5 +1,6 @@
 .tap
   position relative
+  user-select none
 
   &:active &__highlight-color
     display block
@@ -10,7 +11,7 @@
     right -2px
     bottom -2px
     left -2px
-    z-index 1000
     display none
-    background-color rgba(blue, 0.1)
     border-radius 4px
+    background-color rgba(blue, 0.1)
+    pointer-events none

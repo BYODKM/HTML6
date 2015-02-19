@@ -1,13 +1,19 @@
 mixin tap
 
+  if (attributes.for === "")
+    - var isLabel = true
+    - attributes.for = null
+
   if (attributes.href || attributes.href === "")
     a&attributes(attributes).tap.a(ontouchstart="")
       block
       span.tap__highlight-color
-  else if (attributes.for || attributes.for === "")
+
+  else if (attributes.for || isLabel)
     label&attributes(attributes).tap.label(ontouchstart="")
       block
       span.tap__highlight-color
+
   else
     button&attributes(attributes).tap.button(ontouchstart="")
       block
