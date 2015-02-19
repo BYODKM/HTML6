@@ -3,9 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "devDependencies": {
-    "fastclick": "~1.0.3",
+    "fastclick": "~1.0.6",
     "globalize.css": "~1.0.1",
-    "nondestructive-reset.css": "~1.0.7",
+    "nondestructive-reset.css": "~1.0.8",
     "normalize.css": "~3.0.2",
     "legacy-gradient.styl": "~1.0.0"
   }
