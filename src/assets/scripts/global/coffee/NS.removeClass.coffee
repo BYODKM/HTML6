@@ -1,8 +1,15 @@
-window.NS.removeClass = (elm, str)->
-  a = []
-  s = str.replace('.', '')
-  a = elm.className.split(' ')
-  a = a.filter (x)->
-    return x isnt s
-  elm.className = a.join(' ')
+window.NS.removeClass = (elm, cls)->
+
+  tmp = []
+  tmp = elm.className.split(' ')
+  tmp = tmp.filter (arr)->
+    if (typeof cls is 'string')
+      obj = cls.replace('.', '')
+      return arr isnt obj
+    else if (cls instanceof RegExp)
+      return (!arr.match(cls))
+    else
+      return
+  elm.className = tmp.join(' ')
+
   return
