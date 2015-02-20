@@ -4,10 +4,10 @@ window.NS.rating = (nameAttr)->
   scope = checkboxes[0].parentNode
 
   removeHalf = ->
-    star = scope.querySelector('.is-half')
-    a = star.className.split(' ')
-    a = a.filter (x)-> return x isnt 'is-half'
-    star.className = a.join(' ')
+    hlf = scope.querySelector('.is-half')
+    tmp = hlf.className.split(' ')
+    tmp = tmp.filter (arr)-> return arr isnt 'is-half'
+    hlf.className = tmp.join(' ')
     return
 
   for checkbox in checkboxes by -1
