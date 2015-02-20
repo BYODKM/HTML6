@@ -2,10 +2,11 @@
   position relative
   user-select none
 
-  &:active &__highlight-color
+  &:active:after
     display block
 
-  &__highlight-color
+  &:after
+    content ""
     position absolute
     top -2px
     right -2px
