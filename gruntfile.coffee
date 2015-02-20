@@ -33,6 +33,9 @@ module.exports = (grunt) ->
       globalize:
         src: 'bower_components/globalize.css/dist/globalize.styl'
         dest: 'src/assets/styles/utilities/globalize.styl'
+      fastclick:
+        src: 'bower_components/fastclick/lib/fastclick.js'
+        dest: 'src/assets/scripts/global/vendors/fastclick.js'
 
     sprite:
       options:

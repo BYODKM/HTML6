@@ -1,0 +1,25 @@
+mixin label
+
+  if (attributes.for === "")
+    - attributes.for = null
+  else
+    - var targetId = attributes.for
+    - attributes.for = null
+
+  if (!attributes.id || attributes.id === "")
+    - labelId = labelId || 0
+    - labelId += 1
+    - attributes.id = 'labelId-' + labelId
+
+  if (targetId)
+    span&attributes(attributes).label(
+      onclick="NS.toggleChecked('#{targetId}')"
+      )
+      block
+      script.
+        document.addEventListener('DOMContentLoaded', function() {
+          FastClick.attach(document.getElementById('#{attributes.id}'));
+        }, false);
+  else
+    label.label&attributes(attributes)
+      block
