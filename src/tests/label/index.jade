@@ -1,0 +1,33 @@
+include /assets/elements/main
+
+doctype
++html(lang="ja")
+  +head
+    title +label() - Tests - 3000
+  +body
+    .page
+      .row
+        .row__gutter
+        .row__cell
+            p
+              label
+                input(type="checkbox")
+                span  label
+            p
+              label.label
+                input(type="checkbox")
+                span  label.label
+            p
+              +label()
+                input(type="checkbox")
+                span  +label()
+            p
+              +label(for="")
+                input(type="checkbox")
+                span  +label(for="")
+            p
+              +label(for="id")
+                input(type="checkbox" id="id")
+                span  +label(for="id")
+    if (options.dev)
+      script(src="//localhost:35729/livereload.js" charset="utf-8")
