@@ -11,6 +11,8 @@ module.exports = (grunt) ->
         src: ['public_html/assets/images/sprites']
       tmp:
         src: ['.tmp/*']
+      tests:
+        src: ['public_html/tests']
 
     bower:
       install:
@@ -174,5 +176,5 @@ module.exports = (grunt) ->
     'clean:sprites', 'sprite', 'image'
     'stylus'
     'coffee', 'jshint', 'uglify', 'clean:tmp'
-    'jade:production'
+    'jade:production', 'clean:tests'
     ]
