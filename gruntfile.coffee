@@ -37,7 +37,7 @@ module.exports = (grunt) ->
         dest: 'src/assets/styles/utilities/globalize.styl'
       fastclick:
         src: 'bower_components/fastclick/lib/fastclick.js'
-        dest: 'src/assets/scripts/global/vendors/fastclick.js'
+        dest: 'src/assets/scripts/vendors/fastclick.js'
 
     sprite:
       options:
@@ -98,8 +98,9 @@ module.exports = (grunt) ->
         beautify: false
       main:
         files: 'public_html/assets/scripts/main.js' : [
-          'src/assets/scripts/global/vendors/*.js',
-          '.tmp/assets/scripts/global/coffee/*.js'
+          'src/assets/scripts/vendors/*.js',
+          '.tmp/assets/scripts/coffee/global/*.js',
+          '.tmp/assets/scripts/coffee/onload/*.js'
           ]
       controllers:
         files: [
