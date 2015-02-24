@@ -1,0 +1,12 @@
+mixin icon
+
+  - var type = attributes.type
+  - attributes.type = null
+
+  if (attributes.class)
+    - attributes.class += " icon--" + type
+  else
+    - attributes.class = "icon--" + type
+
+  if (type)
+    span&attributes(attributes)
