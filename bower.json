@@ -5,7 +5,7 @@
   "devDependencies": {
     "fastclick": "~1.0.6",
     "globalize.css": "~1.0.2",
-    "nondestructive-reset.css": "~1.0.8",
+    "nondestructive-reset.css": "~1.0.9",
     "normalize.css": "~3.0.2",
     "legacy-gradient.styl": "~1.0.0"
   }
