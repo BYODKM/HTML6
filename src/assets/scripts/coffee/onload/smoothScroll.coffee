@@ -3,7 +3,7 @@ smoothScroll = ->
   options =
     totalTime: 500
     refreshRate: 15
-    disableClass: '.js--smoothScroll-off'
+    disableClass: '.js--smoothScroll--off'
 
   links = document.links
   if (!links.length) then return
