@@ -13,7 +13,7 @@ mixin label
 
   if (targetId)
     span&attributes(attributes).label(
-      onclick="NS.toggleChecked('#{targetId}')"
+      onclick="NS.label('#{targetId}')"
       )
       block
       script.

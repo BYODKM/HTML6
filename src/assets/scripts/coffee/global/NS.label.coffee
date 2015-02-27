@@ -1,4 +1,4 @@
-window.NS.toggleChecked = (id)->
+window.NS.label = (id)->
 
   input = document.getElementById(id)
   if (!input) then return

@@ -1,13 +1,14 @@
-window.NS.rating = (nameAttr)->
+window.NS.rating = (name)->
 
-  checkboxes = document.getElementsByName(nameAttr)
+  checkboxes = document.getElementsByName(name)
   scope = checkboxes[0].parentNode
 
   removeHalf = ->
-    hlf = scope.querySelector('.is-half')
-    tmp = hlf.className.split(' ')
+    half = scope.querySelector('.is-half')
+    if (!half) then return
+    tmp = half.className.split(' ')
     tmp = tmp.filter (arr)-> return arr isnt 'is-half'
-    hlf.className = tmp.join(' ')
+    half.className = tmp.join(' ')
     return
 
   for checkbox in checkboxes by -1
