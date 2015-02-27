@@ -77,8 +77,7 @@ module.exports = (grunt) ->
       options:
         compress: true
       compile:
-        files:
-          'public_html/assets/styles/main.css': ['src/assets/styles/main.styl']
+        files: 'public_html/assets/styles/main.css': ['src/assets/styles/main.styl']
 
     coffee:
       compile:
@@ -97,10 +96,10 @@ module.exports = (grunt) ->
         compress: true
         beautify: false
       main:
-        files: 'public_html/assets/scripts/main.js' : [
+        files: 'public_html/assets/scripts/main.js': [
+          'src/assets/scripts/polyfills/*.js',
           'src/assets/scripts/vendors/*.js',
-          '.tmp/assets/scripts/coffee/global/*.js',
-          '.tmp/assets/scripts/coffee/onload/*.js'
+          '.tmp/assets/scripts/coffee/**/*.js'
           ]
       controllers:
         files: [
