@@ -1,68 +1,62 @@
 smoothScroll = ->
 
+  if (!document.documentElement) then return else $html  = document.documentElement
+  if (!document.body)            then return else $body  = document.body
+  if (!document.links.length)    then return else $links = document.links
+
   options =
-    totalTime: 500
-    refreshRate: 15
-    disableClass: '.js--smoothScroll--off'
+    totalTime    : 500
+    refreshRate  : 15
+    disableClass : '.js--smoothScroll--off'
 
-  links = document.links
-  if (!links.length) then return
+  clicked = (e)->
 
-  scroll = (e)->
-
+    $link = this
     e.preventDefault()
 
-    touch = (e)->
+    ignoreTouch = (e)->
       e.preventDefault()
       return
-    body = document.body
-    if (!body) then return
-    body.addEventListener('touchstart', touch, false)
+    $body.addEventListener('touchstart', ignoreTouch, false)
 
-    windwowH = window.innerHeight
-    documentH = document.documentElement.scrollHeight
-    scrollable = documentH - windwowH
-    if (scrollable < 0) then return
+    id = $link.hash.replace('#', '').replace(/\?.*/, '')
+    $target = document.getElementById(id)
 
-    scrolled = -> return (document.documentElement.scrollTop || body.scrollTop)
+    targetScrollTop = (elem)->
+      px = 0
+      while(elem)
+        px  += elem.offsetTop || 0
+        elem = elem.offsetParent
+      return px
 
-    target = this.hash.replace('#', '').replace(/\?.*/, '')
-    target = document.getElementById(target)
-
-    scaleFromTop = (x)->
-      n = 0
-      while(x)
-        n += x.offsetTop || 0
-        x = x.offsetParent
-      return n
-    goal = scaleFromTop(target)
+    goal = targetScrollTop($target)
+    if (goal > $html.scrollHeight - window.innerHeight) then goal = $html.scrollHeight - window.innerHeight
     if (goal < 0) then goal = 0
-    if (goal > scrollable) then goal = scrollable
 
     equation = (a, b, c, d)-> return a * b / c + d
-
+    currentScrollTop = -> return ($html.scrollTop || $body.scrollTop)
     startTime = new Date()
 
-    run = ->
+    scroll = ->
       lapseTime = new Date() - startTime
-      oneCycle = equation((goal - scrolled()), lapseTime, options.totalTime, scrolled())
+      oneStep = equation((goal - currentScrollTop()), lapseTime, options.totalTime, currentScrollTop())
       if (options.totalTime > lapseTime + options.refreshRate)
-        window.scrollTo(0, parseInt(oneCycle))
-        setTimeout(run, options.refreshRate)
+        window.scrollTo(0, parseInt(oneStep))
+        setTimeout(scroll, options.refreshRate)
       else
         window.scrollTo(0, parseInt(goal))
-        body.removeEventListener('touchstart', touch, false)
+        $body.removeEventListener('touchstart', ignoreTouch, false)
       return
-    run()
+    scroll()
 
     return
 
-  for link in links by -1
-    if (link.getAttribute('href').substring(0, 1) isnt '#') then continue
-    if (link.className.indexOf(options.disableClass.replace('.', '')) >= 0) then continue
-    id = link.hash.replace('#', '').replace(/\?.*/, '')
+  for $link in $links by -1
+    if ($link.getAttribute('href').substring(0, 1) isnt '#') then continue
+    if ($link.className.indexOf(options.disableClass.replace('.', '')) >= 0) then continue
+    id = $link.hash.replace('#', '').replace(/\?.*/, '')
     if (id && document.getElementById(id))
-      link.addEventListener('click', scroll, false)
+      $link.addEventListener('click', clicked, false)
 
   return
 
