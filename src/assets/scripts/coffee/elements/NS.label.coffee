@@ -1,13 +1,12 @@
 window.NS.label = (id)->
 
-  elem = document.getElementById(id)
+  if (!document.getElementById(id))             then return else elem  = document.getElementById(id)
+  if (elem.nodeName.toLowerCase() isnt 'input') then return else input = elem
 
-  if (elem and elem.nodeName.toLowerCase() isnt 'input')   then return
-  if (input.getAttribute('type') is 'checkbox' or 'radio') then input = elem else return
+  if (input.getAttribute('type') is 'radio')
+    if (!input.checked) then input.checked = true
 
-  if (!input.checked)
-    input.checked = true
-  else if (input.getAttribute('type') is 'checkbox')
-    input.checked = false
+  if (input.getAttribute('type') is 'checkbox')
+    if (!input.checked) then input.checked = true else input.checked = false
 
   return
