@@ -45,31 +45,29 @@ module.exports = (grunt) ->
       normal:
         src: 'src/assets/images/sprites/1x/*.png'
         cssTemplate: 'src/assets/styles/scaffolds/sprites/1x.mustache'
-        algorithm: 'binary-tree'
-        destCSS: 'src/assets/styles/scaffolds/sprites/1x.styl'
-        destImg: '.tmp/assets/images/sprites/1x-<%= sprite.options.stamp %>.png'
+        destCss: 'src/assets/styles/scaffolds/sprites/1x.styl'
+        dest: '.tmp/assets/images/sprites/1x-<%= sprite.options.stamp %>.png'
         imgPath: '../images/sprites/1x-<%= sprite.options.stamp %>.png'
       retina:
         src: 'src/assets/images/sprites/2x/*.png'
         cssTemplate: 'src/assets/styles/scaffolds/sprites/2x.mustache'
-        algorithm: 'binary-tree'
-        destCSS: 'src/assets/styles/scaffolds/sprites/2x.styl'
-        destImg: '.tmp/assets/images/sprites/2x-<%= sprite.options.stamp %>.png'
+        destCss: 'src/assets/styles/scaffolds/sprites/2x.styl'
+        dest: '.tmp/assets/images/sprites/2x-<%= sprite.options.stamp %>.png'
         imgPath: '../images/sprites/2x-<%= sprite.options.stamp %>.png'
 
-    image:
+    imagemin:
       sprites:
         files: [
           expand: true,
           cwd: '.tmp/assets/images/sprites/',
-          src: ['*.png'],
+          src: ['**/*.png'],
           dest: 'public_html/assets/images/sprites/'
           ]
       others:
         files: [
           expand: true,
           cwd: 'src/assets/images/others/',
-          src: ['**/*.{png,jpg,gif,svg}'],
+          src: ['**/*.{png,jpg,gif}'],
           dest: 'public_html/assets/images/others/'
           ]
 
@@ -162,7 +160,7 @@ module.exports = (grunt) ->
     ]
 
   grunt.registerTask 'build', [
-    'clean:sprites', 'sprite', 'image'
+    'clean:sprites', 'sprite', 'imagemin'
     'stylus'
     'coffee', 'jshint', 'uglify', 'clean:tmp'
     'jade:development'
@@ -173,7 +171,7 @@ module.exports = (grunt) ->
     ]
 
   grunt.registerTask 'release', [
-    'clean:sprites', 'sprite', 'image'
+    'clean:sprites', 'sprite', 'imagemin'
     'stylus'
     'coffee', 'jshint', 'uglify', 'clean:tmp'
     'jade:production', 'clean:tests'
