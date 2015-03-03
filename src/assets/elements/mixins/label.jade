@@ -16,10 +16,10 @@ mixin label
       onclick="NS.label('#{targetId}')"
       )
       block
-      script.
-        document.addEventListener('DOMContentLoaded', function() {
-          FastClick.attach(document.getElementById('#{attributes.id}'));
-        }, false);
+      //- script.
+      //-   document.addEventListener('DOMContentLoaded', function() {
+      //-     FastClick.attach(document.getElementById('#{attributes.id}'));
+      //-   }, false);
   else
     label.label&attributes(attributes)
       block

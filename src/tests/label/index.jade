@@ -18,6 +18,10 @@ doctype
                 input(type="checkbox")
                 span  label.label
             p
+              label.label(for="id1")
+                input(type="checkbox" id="id1")
+                span  label.label(for="id1")
+            p
               +label()
                 input(type="checkbox")
                 span  +label()
@@ -26,8 +30,8 @@ doctype
                 input(type="checkbox")
                 span  +label(for="")
             p
-              +label(for="id")
-                input(type="checkbox" id="id")
-                span  +label(for="id")
+              +label(for="id2")
+                input(type="checkbox" id="id2")
+                span  +label(for="id2")
     if (options.dev)
       script(src="//localhost:35729/livereload.js" charset="utf-8")
