@@ -7,7 +7,7 @@ smoothScroll = ->
   options =
     totalTime    : 500
     refreshRate  : 15
-    disableClass : '.js--smoothScroll--off'
+    disableClass : '.disabled--smoothScroll'
 
   clicked = (e)->
 
