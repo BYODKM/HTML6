@@ -117,7 +117,7 @@ module.exports = (grunt) ->
           data: (filepath)->
             return options:
               filepath: filepath
-              dev: true
+              devmode: true
         expand: true
         cwd: 'src/'
         src: ['**/*.jade', '!assets/**/*.jade']
@@ -128,7 +128,7 @@ module.exports = (grunt) ->
           data: (filepath)->
             return options:
               filepath: filepath
-              dev: true
+              devmode: false
         expand: true
         cwd: 'src/'
         src: ['**/*.jade', '!assets/**/*.jade']
@@ -154,7 +154,7 @@ module.exports = (grunt) ->
         tasks: ['coffee', 'jshint', 'uglify', 'clean:tmp']
       jade:
         files: ['**/*.jade']
-        tasks: ['jade']
+        tasks: ['jade:development']
 
   grunt.registerTask 'clone', [
     'clean:bower', 'bower', 'copy'
