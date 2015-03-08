@@ -28,7 +28,7 @@ module.exports = (grunt)->
         dest: 'src/assets/styles/scaffolds/resets/nondestructive-reset.styl'
       nondestructiveResetJade:
         src: 'bower_components/nondestructive-reset.css/helper/nondestructive-reset.jade'
-        dest: 'src/assets/modules/resets/nondestructive-reset.jade'
+        dest: 'src/assets/elements/resets/nondestructive-reset.jade'
       legacyGradient:
         src: 'bower_components/legacy-gradient.styl/legacy-gradient.styl'
         dest: 'src/assets/styles/scaffolds/mixins/legacy-gradient.styl'
@@ -98,7 +98,7 @@ module.exports = (grunt)->
           'src/assets/scripts/polyfills/*.js',
           'src/assets/scripts/vendors/*.js',
           '.tmp/assets/scripts/onload/**/*.js'
-          '.tmp/assets/scripts/modules/**/*.js'
+          '.tmp/assets/scripts/elements/**/*.js'
           ]
       controllers:
         files: [
