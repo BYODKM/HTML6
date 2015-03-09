@@ -8,7 +8,7 @@ module.exports = (grunt)->
       bower:
         src: ['bower_components']
       sprites:
-        src: ['public_html/assets/images/sprites']
+        src: ['public_html/assets/sprites']
       tmp:
         src: ['.tmp/*']
       tests:
@@ -43,32 +43,32 @@ module.exports = (grunt)->
       options:
         stamp: '<%= Math.floor(Date.now() / 1000 / 60) %>'
       normal:
-        src: 'src/assets/images/sprites/1x/*.png'
+        src: 'src/assets/sprites/1x/*.png'
         cssTemplate: 'src/assets/styles/scaffolds/sprites/1x.mustache'
         destCss: 'src/assets/styles/scaffolds/sprites/1x.styl'
-        dest: '.tmp/assets/images/sprites/1x-<%= sprite.options.stamp %>.png'
-        imgPath: '../images/sprites/1x-<%= sprite.options.stamp %>.png'
+        dest: '.tmp/assets/sprites/1x-<%= sprite.options.stamp %>.png'
+        imgPath: '../sprites/1x-<%= sprite.options.stamp %>.png'
       retina:
-        src: 'src/assets/images/sprites/2x/*.png'
+        src: 'src/assets/sprites/2x/*.png'
         cssTemplate: 'src/assets/styles/scaffolds/sprites/2x.mustache'
         destCss: 'src/assets/styles/scaffolds/sprites/2x.styl'
-        dest: '.tmp/assets/images/sprites/2x-<%= sprite.options.stamp %>.png'
-        imgPath: '../images/sprites/2x-<%= sprite.options.stamp %>.png'
+        dest: '.tmp/assets/sprites/2x-<%= sprite.options.stamp %>.png'
+        imgPath: '../sprites/2x-<%= sprite.options.stamp %>.png'
 
     imagemin:
       sprites:
         files: [
           expand: true,
-          cwd: '.tmp/assets/images/sprites/',
+          cwd: '.tmp/assets/sprites/',
           src: ['**/*.png'],
-          dest: 'public_html/assets/images/sprites/'
+          dest: 'public_html/assets/sprites/'
           ]
       others:
         files: [
           expand: true,
-          cwd: 'src/assets/images/others/',
+          cwd: 'src/assets/images/',
           src: ['**/*.{png,jpg,gif}'],
-          dest: 'public_html/assets/images/others/'
+          dest: 'public_html/assets/images/'
           ]
 
     stylus:

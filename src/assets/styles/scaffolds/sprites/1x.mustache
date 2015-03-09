@@ -1,13 +1,15 @@
-/* 1x */
+/* @1x */
 {{#items}}
 
-.image__{{name}}
-  display block
+.sprite--{{name}}
+  box-sizing border-box
+  display inline-block
   padding-top {{px.height}}
   width {{px.width}}
   height 0
   overflow hidden
   text-align center
+  vertical-align bottom
   background-image url("{{{escaped_image}}}")
   background-position {{px.offset_x}} {{px.offset_y}}
 {{/items}}

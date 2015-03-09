@@ -1,0 +1,14 @@
+mixin sprite
+
+  //- Usage: +sprite(src="filename.png" alt="")
+
+  - var src = attributes.src.replace(/.png$/, "")
+  - attributes.src = null
+
+  - var alt = attributes.alt
+  - attributes.alt = null
+
+  span&attributes(attributes).sprite(
+    class="sprite--" + src
+    )
+    | #{alt}
