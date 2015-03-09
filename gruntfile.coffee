@@ -43,13 +43,13 @@ module.exports = (grunt)->
       options:
         stamp: '<%= Math.floor(Date.now() / 1000 / 60) %>'
       normal:
-        src: 'src/assets/sprites/1x/*.png'
+        src: 'src/assets/sprites/@1x/*.png'
         cssTemplate: 'src/assets/styles/scaffolds/sprites/1x.mustache'
         destCss: 'src/assets/styles/scaffolds/sprites/1x.styl'
         dest: '.tmp/assets/sprites/1x-<%= sprite.options.stamp %>.png'
         imgPath: '../sprites/1x-<%= sprite.options.stamp %>.png'
       retina:
-        src: 'src/assets/sprites/2x/*.png'
+        src: 'src/assets/sprites/@2x/*.png'
         cssTemplate: 'src/assets/styles/scaffolds/sprites/2x.mustache'
         destCss: 'src/assets/styles/scaffolds/sprites/2x.styl'
         dest: '.tmp/assets/sprites/2x-<%= sprite.options.stamp %>.png'

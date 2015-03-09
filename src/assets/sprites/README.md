@@ -8,12 +8,12 @@
 
 ### In Jade:
 
-	+image(src="FileName-2x.png" alt="AltText")
+	+sprite(src="fileName-2x.png" alt="altText")
 
 ### From Stylus:
 
 	.foo
-	  @extend .image__FileName-2x
+	  @extend .sprite--fileName-2x
 
 ## Bonus
 
