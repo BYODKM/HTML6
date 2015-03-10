@@ -1,21 +1,23 @@
 # Image Sprites Mixin
 
-## Naming Convention
+## Filename
 
-- 2x images must have a "-2x" suffix.
+- @2x images must have a __"-2x"__ suffix, not a __"@2x"__.
 
 ## Usage
 
-### In Jade:
+### Jade:
 
-	+sprite(src="fileName-2x.png" alt="altText")
+```
++sprite(src="fileName-2x.png" alt="altText")
+```
 
-### From Stylus:
+### Stylus:
 
-	.foo
-	  @extend .sprite--fileName-2x
-
-## Bonus
+```
+.foo
+  @extend .sprite--fileName-2x
+```
 
 - No need to write __width__ or __height__ and even __path__ in both cases.
 
