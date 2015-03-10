@@ -12,7 +12,7 @@ module.exports = (grunt)->
       tmp:
         src: ['.tmp/*']
       tests:
-        src: ['public_html/tests']
+        src: ['public_html/assets/tests']
 
     bower:
       install:
@@ -41,14 +41,14 @@ module.exports = (grunt)->
 
     sprite:
       options:
-        stamp: '<%= Math.floor(Date.now() / 1000 / 60) %>'
-      normal:
+        stamp: '<%= Math.floor(Date.now() / 1000) %>'
+      at1x:
         src: 'src/assets/sprites/@1x/*.png'
         cssTemplate: 'src/assets/styles/sprites/1x.mustache'
         destCss: 'src/assets/styles/sprites/1x.styl'
         dest: '.tmp/assets/sprites/1x-<%= sprite.options.stamp %>.png'
         imgPath: '../sprites/1x-<%= sprite.options.stamp %>.png'
-      retina:
+      at2x:
         src: 'src/assets/sprites/@2x/*.png'
         cssTemplate: 'src/assets/styles/sprites/2x.mustache'
         destCss: 'src/assets/styles/sprites/2x.styl'
@@ -97,15 +97,9 @@ module.exports = (grunt)->
         files: 'public_html/assets/scripts/main.js': [
           'src/assets/scripts/polyfills/*.js',
           'src/assets/scripts/vendors/*.js',
-          '.tmp/assets/scripts/onload/**/*.js'
+          '.tmp/assets/scripts/onloads/**/*.js'
           '.tmp/assets/scripts/elements/**/*.js'
-          ]
-      controllers:
-        files: [
-          expand: true,
-          cwd: '.tmp/',
-          src: ['**/*.js', '!assets/**/*.js'],
-          dest: 'public_html/'
+          '.tmp/assets/scripts/controllers/**/*.js'
           ]
 
     jade:
@@ -120,7 +114,7 @@ module.exports = (grunt)->
               devmode: true
         expand: true
         cwd: 'src/'
-        src: ['**/*.jade', '!assets/**/*.jade']
+        src: ['**/*.jade', '!assets/elements/**/*.jade']
         dest: 'public_html/'
         ext: '.html'
       production:
@@ -131,7 +125,7 @@ module.exports = (grunt)->
               devmode: false
         expand: true
         cwd: 'src/'
-        src: ['**/*.jade', '!assets/**/*.jade']
+        src: ['**/*.jade', '!assets/elements/**/*.jade']
         dest: 'public_html/'
         ext: '.html'
 
