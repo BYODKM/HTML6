@@ -11,8 +11,6 @@ module.exports = (grunt)->
         src: ['public_html/assets/sprites']
       tmp:
         src: ['.tmp/*']
-      tests:
-        src: ['public_html/assets/tests']
 
     bower:
       install:
@@ -97,8 +95,8 @@ module.exports = (grunt)->
         files: 'public_html/assets/scripts/main.js': [
           'src/assets/scripts/polyfills/*.js',
           'src/assets/scripts/vendors/*.js',
-          '.tmp/assets/scripts/onloads/**/*.js'
           '.tmp/assets/scripts/elements/**/*.js'
+          '.tmp/assets/scripts/onloads/**/*.js'
           '.tmp/assets/scripts/controllers/**/*.js'
           ]
 
@@ -106,23 +104,10 @@ module.exports = (grunt)->
       options:
         pretty: false
         basedir: __dirname + '/src'
-      development:
-        options:
-          data: (filepath)->
-            return options:
-              filepath: filepath
-              devmode: true
-        expand: true
-        cwd: 'src/'
-        src: ['**/*.jade', '!assets/elements/**/*.jade']
-        dest: 'public_html/'
-        ext: '.html'
-      production:
-        options:
-          data: (filepath)->
-            return options:
-              filepath: filepath
-              devmode: false
+        data: (filepath)->
+          return options:
+            filepath: filepath
+      compile:
         expand: true
         cwd: 'src/'
         src: ['**/*.jade', '!assets/elements/**/*.jade']
@@ -148,7 +133,7 @@ module.exports = (grunt)->
         tasks: ['coffee', 'jshint', 'uglify', 'clean:tmp']
       jade:
         files: ['**/*.jade']
-        tasks: ['jade:development']
+        tasks: ['jade']
 
   grunt.registerTask 'clone', [
     'clean:bower', 'bower', 'copy'
@@ -158,16 +143,9 @@ module.exports = (grunt)->
     'clean:sprites', 'sprite', 'imagemin'
     'stylus'
     'coffee', 'jshint', 'uglify', 'clean:tmp'
-    'jade:development'
+    'jade'
     ]
 
   grunt.registerTask 'serve', [
     'connect', 'watch'
-    ]
-
-  grunt.registerTask 'release', [
-    'clean:sprites', 'sprite', 'imagemin'
-    'stylus'
-    'coffee', 'jshint', 'uglify', 'clean:tmp'
-    'jade:production', 'clean:tests'
     ]
