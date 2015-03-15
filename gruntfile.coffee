@@ -105,8 +105,8 @@ module.exports = (grunt)->
         pretty: false
         basedir: __dirname + '/src'
         data: (filepath)->
-          return options:
-            filepath: filepath
+          return data:
+            relativeRoot: filepath.replace(/[^\/]/g, '').replace(/^\//, '').replace(/\//g, '..\/')
       compile:
         expand: true
         cwd: 'src/'
