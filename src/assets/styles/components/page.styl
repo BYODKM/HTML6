@@ -3,9 +3,12 @@
   min-height 100%
   clearfix()
 
-  &--pc
-    min-width CONTAINER
+  .ua--pc &
+    min-width 1024px
 
-  &--width
+    @media only screen and (min-width: 1024px)
+      overflow-x hidden
+
+  .ua--pc &--width
     margin 0 auto
     width CONTAINER
