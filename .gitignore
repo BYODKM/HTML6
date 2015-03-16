@@ -27,14 +27,13 @@ node_modules
 # Users Environment Variables
 .lock-wscript
 
+.tmp
 public_html
 bower_components
-.tmp
-normalize.styl
-1x.styl
-2x.styl
 fastclick.js
+globalize.styl
 legacy-gradient.styl
 nondestructive-reset.styl
 nondestructive-reset.jade
-globalize.styl
+normalize.styl
+src/assets/styles/sprites/*.styl
