@@ -18,6 +18,7 @@
     "grunt-contrib-watch": "~0.6.1",
     "grunt-markdown": "~0.7.0",
     "grunt-spritesmith": "~4.2.0",
+    "kouto-swiss": "~0.11.9",
     "load-grunt-tasks": "~3.1.0",
     "markdown": "~0.5.0",
     "stylus": "~0.50.0"
