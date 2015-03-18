@@ -1,0 +1,17 @@
+mixin meta
+
+  - var name, content
+  
+  if (attributes.description)
+    - name = 'description'
+    - content = attributes.description
+
+  else if (attributes.keywords)
+    - name = 'keywords'
+    - content = attributes.keywords
+
+  if (content)
+    meta(
+      name=name
+      content=content
+    )
