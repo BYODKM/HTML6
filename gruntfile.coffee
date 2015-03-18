@@ -136,17 +136,8 @@ module.exports = (grunt)->
         files: ['**/*.jade']
         tasks: ['jade']
 
-  grunt.registerTask 'clone', [
-    'clean:bower', 'bower', 'copy'
-    ]
-
-  grunt.registerTask 'build', [
-    'clean:sprites', 'sprite', 'imagemin'
-    'stylus'
-    'coffee', 'jshint', 'uglify', 'clean:tmp'
-    'jade'
-    ]
-
-  grunt.registerTask 'serve', [
-    'connect', 'watch'
-    ]
+  grunt.registerTask 'default', ['clone', 'image']
+  grunt.registerTask 'clone', ['clean:bower', 'bower', 'copy']
+  grunt.registerTask 'image', ['clean:sprites', 'sprite', 'imagemin', 'build']
+  grunt.registerTask 'build', ['stylus', 'coffee', 'jshint', 'uglify', 'clean:tmp', 'jade', 'serve']
+  grunt.registerTask 'serve', ['connect', 'watch']
