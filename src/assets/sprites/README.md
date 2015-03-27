@@ -9,14 +9,14 @@
 ### Jade:
 
 ```
-+sprite(src="fileName-2x.png" alt="altText")
++sprite(src="fileName-2x.png" alt="")
 ```
 
 ### Stylus:
 
 ```
 .foo
-  @extend .sprite--fileName-2x
+  $sprite--fileName-2x()
 ```
 
 - No need to write __width__ or __height__ and even __path__ in both cases.
