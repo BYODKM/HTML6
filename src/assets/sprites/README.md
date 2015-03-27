@@ -6,13 +6,13 @@
 
 ## Usage
 
-### Jade:
+Jade:
 
 ```
 +sprite(src="fileName-2x.png" alt="")
 ```
 
-### Stylus:
+Stylus:
 
 ```
 .foo
