@@ -4,6 +4,8 @@
   min-height 100%
   clearfix()
 
-  .ua--pc &--width
-    margin 0 auto
-    width CONTAINER
+  &__body
+    +media--pcs()
+      box-sizing border-box
+      margin 0 auto
+      width 1024px

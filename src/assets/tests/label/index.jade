@@ -5,28 +5,29 @@ doctype
   +head
     title +label() - Tests - 3000
   +body
-    .page.padding--horizontal
-      p
-        label
-          input(type="checkbox")
-          span  label
-      p
-        label.label
-          input(type="checkbox")
-          span  label.label
-      p
-        label.label(for="id1")
-          input(type="checkbox" id="id1")
-          span  label.label(for="id1")
-      p
-        +label()
-          input(type="checkbox")
-          span  +label()
-      p
-        +label(for="")
-          input(type="checkbox")
-          span  +label(for="")
-      p
-        +label(for="id2")
-          input(type="checkbox" id="id2")
-          span  +label(for="id2")
+    .page
+      section.page__body.padding--lr-1em
+        p
+          label
+            input(type="checkbox")
+            span  label
+        p
+          label.label
+            input(type="checkbox")
+            span  label.label
+        p
+          label.label(for="id1")
+            input(type="checkbox" id="id1")
+            span  label.label(for="id1")
+        p
+          +label()
+            input(type="checkbox")
+            span  +label()
+        p
+          +label(for="")
+            input(type="checkbox")
+            span  +label(for="")
+        p
+          +label(for="id2")
+            input(type="checkbox" id="id2")
+            span  +label(for="id2")
