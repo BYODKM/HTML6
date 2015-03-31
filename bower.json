@@ -4,7 +4,7 @@
   "private": true,
   "devDependencies": {
     "fastclick": "~1.0.6",
-    "globalize.css": "~1.0.5",
+    "globalize.css": "~1.0.6",
     "legacy-gradient.styl": "~1.0.0",
     "nondestructive-reset.css": "~1.1.1",
     "normalize.css": "~3.0.2"
