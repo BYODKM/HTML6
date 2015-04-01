@@ -1,26 +1,29 @@
 # Image Sprites Mixin
 
-## Filename
-
-- @2x images must have a __"-2x"__ suffix, not a __"@2x"__.
+> Available for both HTML and CSS.
 
 ## Usage
 
-Jade:
-
 ```
-+sprite(src="fileName-2x.png" alt="")
-```
+// in .jade
 
-Stylus:
-
-```
-.foo
-  $sprite--fileName-2x()
++sprite(src="that.png" alt="")
 ```
 
-- No need to write __width__ or __height__ and even __path__ in both cases.
+```
+// in .styl
+
+div
+  sprite "that.png"
+```
+
+No need to write __width__ or __height__ and even __filePath__ in both cases.
 
 ## Browser Support
 
 - IE 9+ and others.
+
+## Limitations
+
+- Image fileName will be used by className. Must not be same name.
+- @2x images must not have a "@2x" suffix. Use "-2x" or "_2x" instead.
