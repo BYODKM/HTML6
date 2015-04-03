@@ -17,7 +17,7 @@ div
   sprite "that.png"
 ```
 
-No need to write __width__ or __height__ and even __filePath__ in both cases.
+No need to write __width__ or __height__ and even __path__ in both cases.
 
 ## Browser Support
 
