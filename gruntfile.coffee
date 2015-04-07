@@ -96,8 +96,8 @@ module.exports = (grunt)->
         files: 'public_html/assets/scripts/main.js': [
           'src/assets/scripts/polyfills/*.js',
           'src/assets/scripts/vendors/*.js',
-          '.tmp/assets/scripts/elements/**/*.js'
-          '.tmp/assets/scripts/onloads/**/*.js'
+          '.tmp/assets/scripts/elements/*.js'
+          '.tmp/assets/scripts/onloads/*.js'
           '.tmp/assets/scripts/controllers/**/*.js'
           ]
 
