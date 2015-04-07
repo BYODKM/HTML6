@@ -1,0 +1,28 @@
+mixin details
+
+  //- Usage: +details(summary="Lorem ipsum")
+
+  - detailsId = detailsId || 0
+  - detailsId += 1
+
+  - var summary = "Details"
+  if (attributes.summary && attributes.summary !== "")
+    - summary = attributes.summary
+  - attributes.summary = null
+
+  div&attributes(attributes).details
+    input.details__status(
+      type="checkbox"
+      id="details--#{detailsId}"
+      autocomplete="off"
+      )
+    div.details__segue
+      label.details__summary(
+        for="details--#{detailsId}"
+        )
+        | #{summary}
+      div.details__block
+        block
+    if (detailsId == 1)
+      script.
+        NS.details();

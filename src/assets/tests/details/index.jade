@@ -1,0 +1,15 @@
+include /assets/elements/main
+
+doctype
++html(lang="ja")
+  +head
+    title +details() - Tests - 3000
+  +body
+    .page
+      section.page__body.padding--lr-1em
+        +details.margin--tb-1em
+          +p.margin--t-1em
+            | Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+        +details(summary="Lorem ipsum ...").margin--tb-1em
+          +p.margin--t-1em
+            | Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
