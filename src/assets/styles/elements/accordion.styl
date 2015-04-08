@@ -1,0 +1,40 @@
+.accordion__item
+  border-top 1px solid
+  border-bottom 1px solid
+  border-color silver
+
+  & + &
+    border-top none
+
+  &__status
+    display none !important
+
+    &:not(:checked) + div
+
+      .accordion__item__block
+        height 0 !important
+
+    &:checked + div
+
+      .accordion__item__summary:before
+        transform rotate(0deg) scale(0.7)
+
+  &__summary
+    position relative
+    padding 1em
+    cursor pointer
+    user-select none
+
+    &:before
+      content "▼"
+      absolute 1em 1em false false
+      display block
+      transform rotate(-90deg) scale(0.7)
+      transition 0.3s
+
+  &__block
+    padding 0 1em
+    overflow hidden
+
+    &.is-loaded
+      transition 0.3s

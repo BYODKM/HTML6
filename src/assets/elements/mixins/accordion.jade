@@ -1,0 +1,45 @@
+mixin accordion
+
+  - accordionId = accordionId || 0
+  - accordionId += 1
+
+  div&attributes(attributes).accordion
+    block
+    if (accordionId == 1)
+      script.
+        NS.accordion();
+
+
+
+mixin accordion__item
+
+  - accordionItemId = accordionItemId || 0
+  - accordionItemId += 1
+
+  if (attributes.summary && attributes.summary !== "")
+    - var summary = attributes.summary
+  else
+    - var summary = "Details"
+  - attributes.summary = null
+
+  if (attributes.selected === "selected" || attributes.selected === "true")
+    - var selected = true
+  else
+    - var selected = false
+  - attributes.selected = null
+
+  div&attributes(attributes).accordion__item
+    input.accordion__item__status(
+      type="radio"
+      id="accordion__item--#{accordionItemId}"
+      name="accordion--#{accordionId}"
+      checked=((selected) ? true : false)
+      autocomplete="off"
+      )
+    div.accordion__item__segue
+      div.accordion__item__summary(
+        onclick="NS.accordionItem('accordion__item--#{accordionItemId}')"
+        )
+        | #{summary}
+      div.accordion__item__block
+        block
