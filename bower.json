@@ -6,7 +6,7 @@
     "fastclick": "~1.0.6",
     "globalize.css": "~1.0.7",
     "legacy-gradient.styl": "~1.0.0",
-    "nondestructive-reset.css": "~1.1.3",
+    "nondestructive-reset.css": "~1.1.4",
     "normalize.css": "~3.0.3"
   }
 }
