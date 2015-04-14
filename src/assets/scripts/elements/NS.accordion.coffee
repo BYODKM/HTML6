@@ -1,16 +1,21 @@
-window.NS.accordion = ->
-  window.addEventListener('load', ->
+window.NS.accordion = (id)->
 
-  nodes = document.querySelectorAll('.accordion__item__block')
+  loaded = ->
 
-  for node in nodes by -1
-    node.setAttribute('style', 'height:' + node.scrollHeight + 'px;')
+    nodes = document.querySelectorAll('.accordion__item__block')
 
-  setTimeout ->
     for node in nodes by -1
-      node.className += ' is-loaded'
-    return
-  , 500
+      node.setAttribute('style', 'height:' + node.scrollHeight + 'px;')
 
-  , false)
+    delay = ->
+      for node in nodes by -1
+        node.className += ' is-loaded'
+      return
+
+    setTimeout(delay, 300)
+
+    return
+
+  window.addEventListener('load', loaded, false)
+
   return
