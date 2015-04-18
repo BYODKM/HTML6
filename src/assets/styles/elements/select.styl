@@ -1,0 +1,39 @@
+span.select
+  position relative
+  display inline-block
+  width: w = 100px
+  height 2em
+  overflow hidden
+
+  &:before
+  &:after
+    content ""
+    display block
+    overflow hidden
+    pointer-events none
+
+  &:before
+    absolute 0 0 false false
+    size 2em
+    background-image legacy-gradient(left, rgba(white, 0.5), white 33%)
+    background-image linear-gradient(90deg, rgba(white, 0.5), white 33%)
+
+  &:after
+    absolute 0.75em 0.5em false false
+    size 0
+    border 5px solid
+    border-bottom-color transparent
+    border-right-color transparent
+    border-left-color transparent
+
+  select
+    box-sizing border-box
+    padding-left 0.5em
+    width w + 15px
+    height 1.8em
+    border 0
+    white-space nowrap
+    cursor pointer
+    appearance none
+    background none
+    -webkit-font-smoothing antialiased
