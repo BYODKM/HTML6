@@ -14,7 +14,7 @@
 // *.styl
 
 div
-  sprite "that.png"
+  sprite("that.png")
 ```
 
 No need to write __width__ or __height__ and even __path__ in both cases.
