@@ -1,0 +1,46 @@
+include /assets/elements/main
+
+doctype
++html(lang="ja")
+  +head
+    title form - Tests - 3000
+  +body
+    .page
+      section.page__body.padding--lr-1em
+        p
+          +button button.button
+          +button(href="/") a.button
+        p
+          +input(type="text" value="input.input")
+          +button button.button
+        p
+          | text 
+          +button button.button
+        p
+          | text 
+          +input(type="text" value="input.input")
+        p
+          | text 
+          +input(type="text" value="input.input")
+          +button button.button
+        p
+          | text 
+          +input(type="text" value="input.input")
+          +button(href="/") a.button
+        p
+          | text 
+          +input(type="text" value="input.input")
+          +select(autocomplete="off")
+            option text
+            option this is a pretty long text
+        p
+          +label
+            input(type="radio" autocomplete="off")
+            |  radio
+        p
+          +label
+            input(type="checkbox" autocomplete="off")
+            |  checkbox
+        p
+          +textarea(rows="5")
+            | textarea.textarea
