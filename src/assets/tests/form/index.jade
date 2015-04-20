@@ -9,38 +9,50 @@ doctype
       section.page__body.padding--lr-1em
         p
           +button button.button
+          +spacer
           +button(href="/") a.button
         p
           +input(type="text" value="input.input")
+          +spacer
           +button button.button
         p
-          | text 
+          | text
+          +spacer
           +button button.button
         p
-          | text 
+          | text
+          +spacer
           +input(type="text" value="input.input")
         p
-          | text 
+          | text
+          +spacer
           +input(type="text" value="input.input")
+          +spacer
           +button button.button
         p
-          | text 
+          | text
+          +spacer
           +input(type="text" value="input.input")
+          +spacer
           +button(href="/") a.button
         p
-          | text 
+          | text
+          +spacer
           +input(type="text" value="input.input")
+          +spacer
           +select(autocomplete="off")
             option text
             option this is a pretty long text
         p
           +label
             input(type="radio" autocomplete="off")
-            |  radio
+            +spacer
+            | radio
         p
           +label
             input(type="checkbox" autocomplete="off")
-            |  checkbox
+            +spacer
+            | checkbox
         p
           +textarea(rows="5")
             | textarea.textarea
