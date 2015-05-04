@@ -28,12 +28,13 @@ node_modules
 .lock-wscript
 
 .tmp
-public_html
+assets
 bower_components
 fastclick.js
+index.html
 globalize.styl
 legacy-gradient.styl
-nondestructive-reset.styl
 nondestructive-reset.jade
+nondestructive-reset.styl
 normalize.styl
 src/assets/styles/sprites/*.styl

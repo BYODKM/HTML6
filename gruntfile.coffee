@@ -8,7 +8,7 @@ module.exports = (grunt)->
       bower:
         src: ['bower_components']
       sprites:
-        src: ['public_html/assets/sprites']
+        src: ['assets/sprites']
       tmp:
         src: ['.tmp/*']
 
@@ -59,14 +59,14 @@ module.exports = (grunt)->
           expand: true,
           cwd: '.tmp/assets/sprites/',
           src: ['**/*.png'],
-          dest: 'public_html/assets/sprites/'
+          dest: 'assets/sprites/'
           ]
       others:
         files: [
           expand: true,
           cwd: 'src/assets/images/',
           src: ['**/*.{png,jpg,gif}'],
-          dest: 'public_html/assets/images/'
+          dest: 'assets/images/'
           ]
 
     stylus:
@@ -74,7 +74,7 @@ module.exports = (grunt)->
         compress: true
         use: [require('kouto-swiss')]
       compile:
-        files: 'public_html/assets/styles/main.css': ['src/assets/styles/main.styl']
+        files: 'assets/styles/main.css': ['src/assets/styles/main.styl']
 
     coffee:
       compile:
@@ -93,7 +93,7 @@ module.exports = (grunt)->
         compress: true
         beautify: false
       main:
-        files: 'public_html/assets/scripts/main.js': [
+        files: 'assets/scripts/main.js': [
           'src/assets/scripts/polyfills/*.js',
           'src/assets/scripts/vendors/*.js',
           '.tmp/assets/scripts/elements/*.js'
@@ -112,14 +112,13 @@ module.exports = (grunt)->
         expand: true
         cwd: 'src/'
         src: ['**/*.jade', '!assets/elements/**/*.jade', '!assets/includes/**/*.jade']
-        dest: 'public_html/'
+        dest: ''
         ext: '.html'
 
     connect:
       server:
         options:
           port: '3000'
-          base: 'public_html/'
           open:
             target: 'http://localhost:<%= connect.server.options.port %>'
 
@@ -127,13 +126,13 @@ module.exports = (grunt)->
       options:
         livereload: true
       stylus:
-        files: ['**/*.styl']
+        files: ['src/**/*.styl']
         tasks: ['stylus']
       coffee:
-        files: ['**/*.coffee']
+        files: ['src/**/*.coffee']
         tasks: ['coffee', 'jshint', 'uglify', 'clean:tmp']
       jade:
-        files: ['**/*.jade']
+        files: ['src/**/*.jade']
         tasks: ['jade']
 
   grunt.registerTask 'default', ['clone', 'image']
