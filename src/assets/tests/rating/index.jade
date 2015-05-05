@@ -6,12 +6,28 @@ doctype
     title rating - Tests - 3000
   +body
     .page
-      section.page__body.padding--lr-1em
-        p
-          +rating(value="3")
-        p
-          +rating(value="3" stars="7")
-        p
-          +rating(value="50" max="100" stars="7")
-        p
-          +rating(value="50" max="100" stars="7" readonly="true")
+      section.page__body.line-height--wide
+        dl
+          dt.padding--lr-1em
+            +code.font--small
+              | +rating(value="3")
+          +dd.font--x-large
+            +rating(value="3")
+        dl
+          dt.padding--lr-1em
+            +code.font--small
+              | +rating(value="3" stars="7")
+          +dd.font--x-large
+            +rating(value="3" stars="7")
+        dl
+          dt.padding--lr-1em
+            +code.font--small
+              | +rating(value="50" max="100")
+          +dd.font--x-large
+            +rating(value="50" max="100")
+        dl
+          dt.padding--lr-1em
+            +code.font--small
+              | +rating(value="5" readonly="true")
+          +dd.font--x-large
+            +rating(value="5" readonly="true")
