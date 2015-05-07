@@ -1,6 +1,11 @@
 mixin checkbox
 
-  span.checkbox
+  - var classes = attributes.class
+  - attributes.class = null
+
+  span.checkbox(
+    class=classes
+  )
     input&attributes(attributes)(
       type="checkbox"
       autocomplete="off"

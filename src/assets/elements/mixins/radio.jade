@@ -1,6 +1,11 @@
 mixin radio
 
-  span.radio
+  - var classes = attributes.class
+  - attributes.class = null
+
+  span.radio(
+    class=classes
+  )
     input&attributes(attributes)(
       type="radio"
       autocomplete="off"
