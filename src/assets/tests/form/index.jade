@@ -41,17 +41,27 @@ doctype
           +input(type="text" value="" placeholder="input.input")
           +spacer
           +select(autocomplete="off")
-            option text
-            option this is a pretty long text
+            option +select
+            option this is a long text
         p
           +label
-            input(type="radio" autocomplete="off")
+            input(type="radio" name="radio" autocomplete="off")
             +spacer
             | radio
+        p
+          +label
+            +radio(name="radio")
+            +spacer
+            | radio.radio
         p
           +label
             input(type="checkbox" autocomplete="off")
             +spacer
             | checkbox
+        p
+          +label
+            +checkbox
+            +spacer
+            | checkbox.checkbox
         p
           +textarea(rows="5" placeholder="textarea.textarea")

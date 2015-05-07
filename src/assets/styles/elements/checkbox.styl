@@ -1,0 +1,28 @@
+.checkbox
+  position relative
+
+  span
+    position relative
+    display inline-block
+    width 0.7em
+    height 0.7em
+    overflow hidden
+    border 1px solid
+    border-radius 2px
+
+  input
+    position absolute
+    opacity 0
+    cursor pointer
+
+    &:checked + span
+      background-color gray
+
+      &:before
+        content "\002714"
+        position absolute
+        top 1px
+        left 2px
+        color white
+        font-size 0.6em
+        line-height 1
