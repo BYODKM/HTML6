@@ -1,10 +1,10 @@
-# 3000
+# HTML6
 
-My Front-end Boilerplate.
+New Front-end Boilerplate.
 
 ```
-$ git clone https://github.com/BYODKM/3000.git
-$ cd 3000
+$ git clone https://github.com/BYODKM/HTML6.git
+$ cd HTML6
 $ npm install
 $ grunt
 ```
