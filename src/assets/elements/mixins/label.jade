@@ -6,20 +6,11 @@ mixin label
     - var targetId = attributes.for
     - attributes.for = null
 
-  if (!attributes.id || attributes.id === "")
-    - labelId = labelId || 0
-    - labelId += 1
-    - attributes.id = 'labelId-' + labelId
-
   if (targetId)
     span&attributes(attributes).label(
-      onclick="NS.label('#{targetId}')"
+      onclick="NS.label({for:'#{targetId}'})"
       )
       block
-      //- script.
-      //-   document.addEventListener('DOMContentLoaded', function() {
-      //-     FastClick.attach(document.getElementById('#{attributes.id}'));
-      //-   }, false);
   else
-    label.label&attributes(attributes)
+    label&attributes(attributes).label
       block

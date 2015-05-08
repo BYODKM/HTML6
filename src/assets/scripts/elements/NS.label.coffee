@@ -1,4 +1,6 @@
-window.NS.label = (id)->
+window.NS.label = (obj)->
+
+  id = obj.for
 
   if (!document.getElementById(id))             then return else elem  = document.getElementById(id)
   if (elem.nodeName.toLowerCase() isnt 'input') then return else input = elem
