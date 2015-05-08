@@ -4,11 +4,12 @@
   span
     position relative
     display inline-block
-    width 0.7em
-    height 0.7em
+    width 1em
+    height 1em
     overflow hidden
     border 1px solid
-    border-radius 2px
+    border-radius 4px
+    vertical-align bottom
 
   input
     position absolute
@@ -20,11 +21,16 @@
       background-color gray
 
       &:before
-        content "\002714"
+        content "L"
         position absolute
+        top -10%
+        left 35%
         z-index 1
-        top 1px
-        left 2px
+        display block
+        width 0.5em
+        height 1em
         color white
-        font-size 0.6em
-        line-height 1
+        font-size 0.9em
+        font-weight bold
+        line-height 1.1
+        transform scaleX(-1) rotate(-40deg)

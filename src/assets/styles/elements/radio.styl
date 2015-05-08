@@ -4,11 +4,12 @@
   span
     position relative
     display inline-block
-    width 0.7em
-    height 0.7em
+    width 1em
+    height 1em
     overflow hidden
     border 1px solid
-    border-radius 0.7em
+    border-radius 1em
+    vertical-align bottom
 
   input
     position absolute
@@ -21,13 +22,13 @@
 
       &:before
         content ""
-        position absolute
+        position relative
+        top 20%
         z-index 1
-        top 0.2em
-        left 0.2em
         display block
-        width 0.3em
-        height 0.3em
+        margin 0 auto
+        width 60%
+        height 60%
         overflow hidden
-        border-radius 0.3em
+        border-radius 1em
         background-color white

@@ -8,60 +8,60 @@ doctype
     .page
       section.page__body.padding--lr-1em
         p
-          +button button.button
+          +button +button()
           +spacer
-          +button(href="/") a.button
+          +button(href="") a.button
         p
-          +input(type="text" value="" placeholder="input.input")
+          +input(type="text" value="" placeholder="+input()")
           +spacer
-          +button button.button
-        p
-          | text
-          +spacer
-          +button button.button
+          +button +button()
         p
           | text
           +spacer
-          +input(type="text" value="" placeholder="input.input")
+          +button +button()
         p
           | text
           +spacer
-          +input(type="text" value="" placeholder="input.input")
-          +spacer
-          +button button.button
+          +input(type="text" value="" placeholder="+input()")
         p
           | text
           +spacer
-          +input(type="text" value="" placeholder="input.input")
+          +input(type="text" value="" placeholder="+input()")
           +spacer
-          +button(href="/") a.button
+          +button +button()
         p
           | text
           +spacer
-          +input(type="text" value="" placeholder="input.input")
+          +input(type="text" value="" placeholder="+input()")
+          +spacer
+          +button(href="") a.button
+        p
+          | text
+          +spacer
+          +input(type="text" value="" placeholder="+input()")
           +spacer
           +select(autocomplete="off")
-            option +select
+            option +select()
             option this is a long text
-        p
-          +label
-            input(type="radio" name="radio" autocomplete="off")
-            +spacer
-            | radio
         p
           +label
             +radio(name="radio")
             +spacer
-            | +radio
+            | +radio()
         p
           +label
-            input(type="checkbox" autocomplete="off")
+            +radio(name="radio")
             +spacer
-            | checkbox
+            | +radio()
         p
           +label
             +checkbox
             +spacer
-            | +checkbox
+            | +checkbox()
         p
-          +textarea(rows="5" placeholder="textarea.textarea")
+          +label
+            +checkbox
+            +spacer
+            | +checkbox()
+        p
+          +textarea(rows="5" placeholder="+textarea()")
