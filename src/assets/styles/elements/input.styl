@@ -1,8 +1,12 @@
 .input:not([type="checkbox"]):not([type="radio"]):not([type="range"])
   padding-left 0.5em
   height 2em
+  border-color black
 
   +placeholder()
+    color darkgray
+
+  &[data-placeholder="true"]
     color darkgray
 
   &:focus
