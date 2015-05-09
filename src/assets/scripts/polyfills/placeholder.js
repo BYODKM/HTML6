@@ -17,14 +17,14 @@
 
   focused = function() {
     this.setAttribute('data-placeholder', 'false');
-    if (this.value === this.placeholder) {
+    if (this.value === this.getAttribute('placeholder')) {
       this.value = '';
     }
   };
 
   blurred = function() {
     if (this.value === '') {
-      this.value = this.placeholder;
+      this.value = this.getAttribute('placeholder');
       this.setAttribute('data-placeholder', 'true');
     }
   };
@@ -35,7 +35,7 @@
     for (i = nodes.length - 1; i >= 0; i += -1) {
       node = nodes[i];
       if (node.value === '') {
-        node.value = node.placeholder;
+        node.value = node.getAttribute('placeholder');
         node.setAttribute('data-placeholder', 'true');
       }
       node.addEventListener('focus', focused, false);
