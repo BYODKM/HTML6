@@ -13,5 +13,5 @@ script
       if (navigator.userAgent.match(/iPad/i))
         meta.setAttribute("content", "width=1024, initial-scale=1.0")
       else
-        meta.setAttribute("content", "initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no")
+        meta.setAttribute("content", "width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no")
       document.getElementsByTagName("head")[0].appendChild(meta)
