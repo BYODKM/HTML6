@@ -2,25 +2,9 @@ mixin head
 
   head
     meta(charset="utf-8")
+    include /assets/partials/viewport/responsive
+    //- include /assets/partials/viewport/adaptive
     meta(name="format-detection" content="telephone=no")
-    meta(name="viewport" content="initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no")
-    //- script
-    //-   :coffee
-    //-     do ->
-    //-       if (navigator.userAgent.match(/iPhone|iPod|Android/i))
-    //-         document.documentElement.className += ' ua--sp'
-    //-       else
-    //-         document.documentElement.className += ' ua--pc'
-    //- script
-    //-   :coffee
-    //-     do ->
-    //-       meta = document.createElement("meta")
-    //-       meta.setAttribute("name", "viewport")
-    //-       if (navigator.userAgent.match(/iPad/i))
-    //-         meta.setAttribute("content", "width=1024, initial-scale=1.0")
-    //-       else
-    //-         meta.setAttribute("content", "initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no")
-    //-       document.getElementsByTagName("head")[0].appendChild(meta)
     //- meta(name="apple-mobile-web-app-capable" content="yes")
     //- meta(name="apple-mobile-web-app-title" content="")
     //- meta(name="keywords" content="")

@@ -111,7 +111,7 @@ module.exports = (grunt)->
       compile:
         expand: true
         cwd: 'src/'
-        src: ['**/*.jade', '!assets/elements/**/*.jade', '!assets/includes/**/*.jade']
+        src: ['**/*.jade', '!assets/elements/**/*.jade', '!assets/partials/**/*.jade']
         dest: ''
         ext: '.html'
 
