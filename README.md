@@ -16,6 +16,7 @@ $ grunt
 - [normalize.css](https://github.com/necolas/normalize.css)
 - [globalize.css](https://github.com/BYODKM/globalize.css)
 - [nondestructive-reset.css](https://github.com/BYODKM/nondestructive-reset.css)
+- [kouto-swiss](https://github.com/krkn/kouto-swiss)
 - [legacy-gradient.styl](https://github.com/BYODKM/legacy-gradient.styl)
 
 ## Supported browsers
