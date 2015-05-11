@@ -9,6 +9,15 @@ $ npm install
 $ grunt
 ```
 
+## Good dependencies
+
+- [fastclick.js](https://github.com/ftlabs/fastclick)
+- [classList.js](https://github.com/eligrey/classList.js)
+- [normalize.css](https://github.com/necolas/normalize.css)
+- [globalize.css](https://github.com/BYODKM/globalize.css)
+- [nondestructive-reset.css](https://github.com/BYODKM/nondestructive-reset.css)
+- [legacy-gradient.styl](https://github.com/BYODKM/legacy-gradient.styl)
+
 ## Supported browsers
 
 - IE 9+
