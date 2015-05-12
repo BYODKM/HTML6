@@ -1,13 +1,12 @@
 script
   :coffee
     do ->
+
       if (navigator.userAgent.match(/iPhone|iPod|Android/i))
         document.documentElement.className += ' ua--sp'
       else
         document.documentElement.className += ' ua--pc'
-script
-  :coffee
-    do ->
+
       meta = document.createElement("meta")
       meta.setAttribute("name", "viewport")
       if (navigator.userAgent.match(/iPad/i))

@@ -1,24 +1,24 @@
 mixin head
 
+  - var responsible = true
+
+  if (attributes.responsible === "false")
+    - responsible = false
+
+  - attributes.responsible = null
+
   head
     meta(charset="utf-8")
-    include /assets/partials/viewport/responsive
-    //- include /assets/partials/viewport/adaptive
+    if (responsible)
+      include /assets/partials/viewport/responsive
+    else
+      include /assets/partials/viewport/adaptive
     meta(name="format-detection" content="telephone=no")
     //- meta(name="apple-mobile-web-app-capable" content="yes")
     //- meta(name="apple-mobile-web-app-title" content="")
     //- meta(name="keywords" content="")
     link(href=data.relativeRoot + "assets/styles/main.css" rel="stylesheet" media="only all")
     script(src=data.relativeRoot + "assets/scripts/main.js" charset="utf-8")
-    //- script
-    //-   :coffee
-    //-     do ->
-    //-       if (!window.navigator.standalone)
-    //-         meta = document.createElement("meta")
-    //-         meta.setAttribute("name", "apple-mobile-web-app-status-bar-style")
-    //-         meta.setAttribute("content", "black-translucent")
-    //-         head = document.getElementsByTagName("head")[0]
-    //-         head.appendChild(meta)
     //- link(href="/favicon.ico" rel="shortcut icon")
     //- link(href="/apple-touch-icon-precomposed.png" rel="apple-touch-icon")
     //- link(href="/apple-touch-startup-image.png" rel="apple-touch-startup-image")
