@@ -23,3 +23,7 @@ $ grunt
 
 - IE 9+
 - Others
+
+## License
+
+MIT
