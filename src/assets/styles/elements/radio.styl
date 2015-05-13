@@ -10,6 +10,7 @@
     border 1px solid
     border-radius 1em
     vertical-align bottom
+    background-color white
 
   input
     position absolute
@@ -17,18 +18,15 @@
     opacity 0
     cursor pointer
 
-    &:checked + span
-      background-color white
-
-      &:before
-        content ""
-        position relative
-        top 20%
-        z-index 1
-        display block
-        margin 0 auto
-        width 60%
-        height 60%
-        overflow hidden
-        border-radius 1em
-        background-color black
+    &:checked + span:before
+      content ""
+      position relative
+      top 20%
+      z-index 1
+      display block
+      margin 0 auto
+      width 60%
+      height 60%
+      overflow hidden
+      border-radius 1em
+      background-color black
