@@ -1,37 +1,49 @@
 .checkbox
-  position relative
 
-  span
+  &__self
     position relative
     display inline-block
+    padding 1px
+    width 1em
+    height 1em
+    overflow hidden
+    vertical-align bottom
+
+  &__status
+    position relative
+    top -1px
+    left -1px
+    z-index 1
+    display block
     width 1em
     height 1em
     overflow hidden
     border 1px solid
     border-radius 4px
-    vertical-align bottom
     background-color white
+
+    &:before
+      content "L"
+      position relative
+      top -1px
+      z-index 2
+      display block
+      margin 0 auto
+      width 0.5em
+      color white
+      font-weight bold
+      line-height 1.1
+      user-select none
+      transform scaleX(-1) rotate(-40deg)
 
   input
     position absolute
-    z-index 2
+    top 0
+    left 0
+    z-index 3
     opacity 0
     cursor pointer
+    transform scale(1.1)
 
     &:checked + span
       background-color black
-
-      &:before
-        content "L"
-        position relative
-        top -10%
-        left 15%
-        z-index 1
-        display block
-        width 0.9em
-        color white
-        font-size 0.9em
-        font-weight bold
-        text-align center
-        line-height 1.1
-        transform scaleX(-1) rotate(-40deg)

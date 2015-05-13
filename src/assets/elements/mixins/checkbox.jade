@@ -6,8 +6,9 @@ mixin checkbox
   span.checkbox(
     class=classes
   )
-    input&attributes(attributes)(
-      type="checkbox"
-      autocomplete="off"
-    )
-    span
+    span.checkbox__self
+      input&attributes(attributes)(
+        type="checkbox"
+        autocomplete="off"
+      )
+      span.checkbox__status

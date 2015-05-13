@@ -6,8 +6,9 @@ mixin radio
   span.radio(
     class=classes
   )
-    input&attributes(attributes)(
-      type="radio"
-      autocomplete="off"
-    )
-    span
+    span.radio__self
+      input&attributes(attributes)(
+        type="radio"
+        autocomplete="off"
+      )
+      span.radio__status
