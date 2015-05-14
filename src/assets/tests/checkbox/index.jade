@@ -1,0 +1,27 @@
+include /assets/elements/main
+
+doctype
++html(lang="ja")
+  +head
+    +title +checkbox() - Tests
+  +body
+    .page
+      section.page__body.padding--lr-1rem
+        p
+          +label(for="radio").line-height--xx-wide
+            +radio(name="radio")#radio
+            +spacer
+            +code .line-height--xx-wide
+        p
+          +radio(name="radio" checked="checked")
+          +spacer
+          | No label
+        p
+          +label(for="checkbox").line-height--xx-wide
+            +checkbox(id="checkbox")
+            +spacer
+            +code .line-height--xx-wide
+        p
+          +checkbox(checked="checked")
+          +spacer
+          | No label
