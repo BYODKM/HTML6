@@ -8,19 +8,30 @@ doctype
     .page
       section.page__body.padding--lr-1rem
         p
-          +label(for="radio").line-height--xx-wide
-            +radio(name="radio")#radio
+          +label.line-height--xx-wide
+            +radio(name="radio")
             +spacer
             +code .line-height--xx-wide
+        p
+          +label(for="radio")
+            +radio(name="radio")#radio
+            +spacer
+            +code +label(for=id)
         p
           +radio(name="radio" checked="checked")
           +spacer
           | No label
+        +hr
         p
-          +label(for="checkbox").line-height--xx-wide
-            +checkbox(id="checkbox")
+          +label.line-height--xx-wide
+            +checkbox
             +spacer
             +code .line-height--xx-wide
+        p
+          +label(for="checkbox")
+            +checkbox(id="checkbox")
+            +spacer
+            +code +label(for=id)
         p
           +checkbox(checked="checked")
           +spacer

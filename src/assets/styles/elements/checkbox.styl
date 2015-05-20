@@ -1,7 +1,7 @@
 .checkbox
   vertical-align 8%
 
-  &__self
+  &__box
     position relative
     display inline-block
     padding 1px
@@ -10,9 +10,12 @@
     overflow hidden
     vertical-align middle
 
-  &__status
+  &__check
+    position absolute
+    top 0
+    left 0
+    z-index 1
     display block
-    margin -1px 0 0 -1px
     width 1em
     height 1em
     overflow hidden
@@ -31,10 +34,10 @@
       user-select none
       transform scaleX(-1) rotate(-40deg)
 
-  input
-    position absolute
-    top 0
-    left 0
+  &__self
+    position relative
+    z-index 2
+    display block
     width 1em
     height 1em
     opacity 0
@@ -42,3 +45,6 @@
 
     &:checked + span
       background-color black
+
+    span.label &
+      display none
