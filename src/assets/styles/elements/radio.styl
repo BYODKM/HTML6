@@ -1,7 +1,7 @@
 .radio
   vertical-align 8%
 
-  &__self
+  &__box
     position relative
     display inline-block
     width 1em
@@ -13,7 +13,7 @@
     vertical-align middle
     background-color white
 
-  &__status
+  &__check
     display block
     box-sizing border-box
     height 100%
@@ -21,10 +21,11 @@
     border 3px solid white
     border-radius 1em
 
-  input
+  &__self
     position absolute
     top 0
     left 0
+    z-index 1
     width 1em
     height 1em
     opacity 0
