@@ -1,0 +1,42 @@
+.switch
+  position relative
+  display inline-block
+  width 4em
+  height 2em
+  border-radius 2em
+  overflow hidden
+  line-height 2em
+  vertical-align middle
+
+  &__box
+    absolute 0 false false 0
+    z-index 1
+    display block
+    size 100%
+    background-color silver
+
+  &__check
+    absolute 0 false false 0
+    z-index 2
+    display block
+    box-sizing border-box
+    size 2em
+    border 2px solid silver
+    border-radius 2em
+    background-color white
+    transition 0.1s
+
+  &__self
+    position relative
+    z-index 3
+    display block
+    size 100%
+    opacity 0
+    cursor pointer
+
+    &:checked + span span
+      left 2em
+      background-color black
+
+    span.label &
+      display none

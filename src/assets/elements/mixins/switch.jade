@@ -1,0 +1,14 @@
+mixin switch
+
+  - var classes = attributes.class
+  - attributes.class = null
+
+  span.switch(
+    class=classes
+  )
+    input&attributes(attributes).switch__self(
+      type="checkbox"
+      autocomplete="off"
+    )
+    span.switch__box
+      span.switch__check
