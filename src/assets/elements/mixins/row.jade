@@ -36,7 +36,9 @@ mixin row__cell
 
 mixin row__gutter
 
-  //- Usage: +row__gutter(by="2")
+  //-
+    - Usage: +row__gutter(by="2")
+    - Yield: div.row__gutter(style="width: 2em;")
 
   - var by = attributes.by
   - attributes.by = null

@@ -1,6 +1,8 @@
 mixin sprite
 
-  //- Usage: +sprite(src="filename.png" alt="")
+  //-
+    - Usage: +sprite(src="filename.png" alt="")
+    - Yield: span.sprite.sprite--filename #{alt}
 
   - var src = attributes.src.replace(/.png$/, "")
   - attributes.src = null

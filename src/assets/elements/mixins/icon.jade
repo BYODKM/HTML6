@@ -1,6 +1,8 @@
 mixin icon
 
-  //- Usage: +icon(type="icontype")
+  //-
+    - Usage: +icon(type="iconType")
+    - Yield: span.icon--#{iconType}
 
   - var type = attributes.type
   - attributes.type = null
