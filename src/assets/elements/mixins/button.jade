@@ -1,5 +1,11 @@
 mixin button
 
+  //- Usage: +button(type="submit")
+
+  //-
+    - Usage: +button(href="/")
+    - Yield: a.button(href="/")
+
   if (attributes.href || attributes.href == "")
     a&attributes(attributes).button
       block

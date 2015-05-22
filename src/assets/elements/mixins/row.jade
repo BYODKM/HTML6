@@ -1,5 +1,7 @@
 mixin row
 
+  //- Usage: +row(width="90%")
+
   - var width = attributes.width
   - attributes.width = null
 
@@ -16,6 +18,8 @@ mixin row
 
 mixin row__cell
 
+  //- Usage: +row__cell(width="30%")
+
   - var width = attributes.width
   - attributes.width = null
 
@@ -31,6 +35,8 @@ mixin row__cell
 
 
 mixin row__gutter
+
+  //- Usage: +row__gutter(by="2")
 
   - var by = attributes.by
   - attributes.by = null
