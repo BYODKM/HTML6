@@ -10,36 +10,91 @@ doctype
         p
           label
             input(type="checkbox")
-            |  label
+            +spacer
+            +code label
         p
           label.label
             input(type="checkbox")
-            |  label.label
+            +spacer
+            +code label.label
         p
           label.label(for="id1")
             input(type="checkbox" id="id1")
-            |  label.label(for="id1")
+            +spacer
+            +code label.label(for="id1")
         p
           +label()
             input(type="checkbox")
-            |  +label()
+            +spacer
+            +code +label()
         p
           +label(for="")
             input(type="checkbox")
-            |  +label(for="")
+            +spacer
+            +code +label(for="")
         p
           +label(for="id2")
             input(type="checkbox" id="id2")
-            |  +label(for="id2")
+            +spacer
+            +code +label(for="id2")
         p
           +label
             +checkbox
-            |  +label()
+            +spacer
+            +code +label()
         p
           +label(for="")
             +checkbox
-            |  +label(for="")
+            +spacer
+            +code +label(for="")
         p
           +label(for="id3")
             +checkbox(id="id3")
-            |  +label(for="id3")
+            +spacer
+            +code +label(for="id3")
+        +hr
+        p
+          label
+            input(type="radio" name="radio")
+            +spacer
+            +code label
+        p
+          label.label
+            input(type="radio" name="radio")
+            +spacer
+            +code label.label
+        p
+          label(for="id4")
+            input(type="radio" name="radio" id="id4")
+            +spacer
+            +code label(for="id4")
+        p
+          +label
+            input(type="radio" name="radio")
+            +spacer
+            +code +label()
+        p
+          +label(for="")
+            input(type="radio" name="radio")
+            +spacer
+            +code +label(for="")
+        p
+          +label(for="id5")
+            input(type="radio" name="radio" id="id5")
+            +spacer
+            +code +label(for="id5")
+        p
+          +label
+            +radio(name="radio")
+            +spacer
+            +code +label()
+        p
+          +label(for="")
+            +radio(name="radio")
+            +spacer
+            +code +label(for="")
+        p
+          +label(for="id6")
+            +radio(name="radio" id="id6")
+            +spacer
+            +code +label(for="id6")

@@ -9,7 +9,7 @@ mixin label
     - attributes.for = null
 
   if (targetId)
-    span&attributes(attributes).label(
+    span&attributes(attributes).label.label--fastclick(
       onclick="NS.label({for:'#{targetId}'})"
       )
       block
