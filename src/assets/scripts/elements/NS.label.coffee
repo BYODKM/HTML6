@@ -7,8 +7,12 @@ window.NS.label = (obj)->
 
   if (input.getAttribute('type') is 'radio')
     if (!input.checked) then input.checked = true
+    return
 
   if (input.getAttribute('type') is 'checkbox')
     if (!input.checked) then input.checked = true else input.checked = false
+    return
 
-  return
+  if (input.getAttribute('type') is 'text')
+    if (input isnt document.activeElement) then input.focus()
+    return

@@ -1,14 +1,22 @@
 mixin label
 
-  //- Usage: +label(for="id")
+  //- Usage: +label(for="id" fastclick="false")
+
+  - var goFlag = true
+
+  if (attributes.fastclick === "false")
+    - goFlag = false
+
+  if (attributes.fastclick)
+    - attributes.fastclick = null
 
   if (attributes.for === "")
     - attributes.for = null
-  else
+  else if (goFlag)
     - var targetId = attributes.for
     - attributes.for = null
 
-  if (targetId)
+  if (goFlag && targetId)
     span&attributes(attributes).label.label--fastclick(
       onclick="NS.label({for:'#{targetId}'})"
       )
