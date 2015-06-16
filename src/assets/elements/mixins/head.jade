@@ -1,17 +1,17 @@
 mixin head
 
-  //- Usage: +head(responsible="true")
+  //- Usage: +head(responsive="false")
 
-  - var responsible = true
+  - var responsive = true
 
-  if (attributes.responsible === "false")
-    - responsible = false
+  if (attributes.responsive === "false")
+    - responsive = false
 
-  - attributes.responsible = null
+  - attributes.responsive = null
 
   head
     meta(charset="utf-8")
-    if (responsible)
+    if (responsive)
       include /assets/partials/viewport/responsive
     else
       include /assets/partials/viewport/adaptive
