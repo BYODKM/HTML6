@@ -28,8 +28,8 @@ node_modules
 .lock-wscript
 
 .tmp
-assets/images
-assets/sprites
+html6/images
+html6/sprites
 bower_components
 fastclick.js
 globalize.styl
@@ -37,4 +37,4 @@ legacy-gradient.styl
 nondestructive-reset.jade
 nondestructive-reset.styl
 normalize.styl
-src/assets/styles/sprites/*.styl
+src/html6/styles/sprites/*.styl

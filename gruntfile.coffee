@@ -8,7 +8,7 @@ module.exports = (grunt)->
       bower:
         src: ['bower_components']
       sprites:
-        src: ['assets/sprites']
+        src: ['html6/sprites']
       tmp:
         src: ['.tmp/*']
 
@@ -20,53 +20,53 @@ module.exports = (grunt)->
     copy:
       normalize:
         src: 'bower_components/normalize.css/normalize.css'
-        dest: 'src/assets/styles/scaffolds/normalize.styl'
+        dest: 'src/html6/styles/scaffolds/normalize.styl'
       nondestructiveReset:
         src: 'bower_components/nondestructive-reset.css/src/nondestructive-reset.styl'
-        dest: 'src/assets/styles/scaffolds/nondestructive-reset.styl'
+        dest: 'src/html6/styles/scaffolds/nondestructive-reset.styl'
       nondestructiveResetJade:
         src: 'bower_components/nondestructive-reset.css/helper/nondestructive-reset.jade'
-        dest: 'src/assets/elements/resets/nondestructive-reset.jade'
+        dest: 'src/html6/elements/resets/nondestructive-reset.jade'
       legacyGradient:
         src: 'bower_components/legacy-gradient.styl/legacy-gradient.styl'
-        dest: 'src/assets/styles/mixins/legacy-gradient.styl'
+        dest: 'src/html6/styles/mixins/legacy-gradient.styl'
       globalize:
         src: 'bower_components/globalize.css/dist/globalize.styl'
-        dest: 'src/assets/styles/utilities/globalize.styl'
+        dest: 'src/html6/styles/utilities/globalize.styl'
       fastclick:
         src: 'bower_components/fastclick/lib/fastclick.js'
-        dest: 'src/assets/scripts/vendors/fastclick.js'
+        dest: 'src/html6/scripts/vendors/fastclick.js'
 
     sprite:
       options:
         stamp: '<%= Math.floor(Date.now() / 1000) %>'
       at1x:
-        src: 'src/assets/sprites/@1x/*.png'
-        cssTemplate: 'src/assets/styles/sprites/1x.mustache'
-        destCss: 'src/assets/styles/sprites/1x.styl'
-        dest: '.tmp/assets/sprites/1x-<%= sprite.options.stamp %>.png'
+        src: 'src/html6/sprites/@1x/*.png'
+        cssTemplate: 'src/html6/styles/sprites/1x.mustache'
+        destCss: 'src/html6/styles/sprites/1x.styl'
+        dest: '.tmp/html6/sprites/1x-<%= sprite.options.stamp %>.png'
         imgPath: '../sprites/1x-<%= sprite.options.stamp %>.png'
       at2x:
-        src: 'src/assets/sprites/@2x/*.png'
-        cssTemplate: 'src/assets/styles/sprites/2x.mustache'
-        destCss: 'src/assets/styles/sprites/2x.styl'
-        dest: '.tmp/assets/sprites/2x-<%= sprite.options.stamp %>.png'
+        src: 'src/html6/sprites/@2x/*.png'
+        cssTemplate: 'src/html6/styles/sprites/2x.mustache'
+        destCss: 'src/html6/styles/sprites/2x.styl'
+        dest: '.tmp/html6/sprites/2x-<%= sprite.options.stamp %>.png'
         imgPath: '../sprites/2x-<%= sprite.options.stamp %>.png'
 
     imagemin:
       sprites:
         files: [
           expand: true,
-          cwd: '.tmp/assets/sprites/',
+          cwd: '.tmp/html6/sprites/',
           src: ['**/*.png'],
-          dest: 'assets/sprites/'
+          dest: 'html6/sprites/'
           ]
       others:
         files: [
           expand: true,
-          cwd: 'src/assets/images/',
+          cwd: 'src/html6/images/',
           src: ['**/*.{png,jpg,gif}'],
-          dest: 'assets/images/'
+          dest: 'html6/images/'
           ]
 
     stylus:
@@ -74,7 +74,7 @@ module.exports = (grunt)->
         compress: true
         use: [require('kouto-swiss')]
       compile:
-        files: 'assets/styles/main.css': ['src/assets/styles/main.styl']
+        files: 'html6/styles/main.css': ['src/html6/styles/main.styl']
 
     coffee:
       compile:
@@ -93,12 +93,12 @@ module.exports = (grunt)->
         compress: true
         beautify: false
       main:
-        files: 'assets/scripts/main.js': [
-          'src/assets/scripts/polyfills/*.js',
-          'src/assets/scripts/vendors/*.js',
-          '.tmp/assets/scripts/elements/*.js'
-          '.tmp/assets/scripts/onloads/*.js'
-          '.tmp/assets/scripts/controllers/**/*.js'
+        files: 'html6/scripts/main.js': [
+          'src/html6/scripts/polyfills/*.js',
+          'src/html6/scripts/vendors/*.js',
+          '.tmp/html6/scripts/elements/*.js'
+          '.tmp/html6/scripts/onloads/*.js'
+          '.tmp/html6/scripts/controllers/**/*.js'
           ]
 
     jade:
@@ -111,7 +111,7 @@ module.exports = (grunt)->
       compile:
         expand: true
         cwd: 'src/'
-        src: ['**/*.jade', '!assets/elements/**/*.jade', '!assets/partials/**/*.jade']
+        src: ['**/*.jade', '!html6/elements/**/*.jade', '!html6/partials/**/*.jade']
         dest: ''
         ext: '.html'
 
@@ -120,7 +120,7 @@ module.exports = (grunt)->
         options:
           port: '3000'
           open:
-            target: 'http://localhost:<%= connect.server.options.port %>/assets/tests/'
+            target: 'http://localhost:<%= connect.server.options.port %>/html6/tests/'
 
     watch:
       options:

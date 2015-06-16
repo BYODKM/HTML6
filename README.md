@@ -1,6 +1,6 @@
 # HTML6
 
-> New Front-end Boilerplate.
+> New Front-end Bootstrap
 
 ```
 $ git clone https://github.com/BYODKM/HTML6.git
@@ -11,27 +11,27 @@ $ grunt
 
 ## Elements
 
-- [+accordion()](src/assets/elements/mixins/accordion.jade)
-- [+body()](src/assets/elements/mixins/body.jade)
-- [+button()](src/assets/elements/mixins/button.jade)
-- [+checkbox()](src/assets/elements/mixins/checkbox.jade)
-- [+code()](src/assets/elements/mixins/code.jade)
-- [+details()](src/assets/elements/mixins/details.jade)
-- [+head()](src/assets/elements/mixins/head.jade)
-- [+hx()](src/assets/elements/mixins/hx.jade)
-- [+icon()](src/assets/elements/mixins/icon.jade)
-- [+label()](src/assets/elements/mixins/label.jade)
-- [+margin()](src/assets/elements/mixins/margin.jade)
-- [+meta()](src/assets/elements/mixins/meta.jade)
-- [+radio()](src/assets/elements/mixins/radio.jade)
-- [+rating()](src/assets/elements/mixins/rating.jade)
-- [+row()](src/assets/elements/mixins/row.jade)
-- [+section()](src/assets/elements/mixins/section.jade)
-- [+select()](src/assets/elements/mixins/select.jade)
-- [+spacer()](src/assets/elements/mixins/spacer.jade)
-- [+sprite()](src/assets/elements/mixins/sprite.jade)
-- [+switch()](src/assets/elements/mixins/switch.jade)
-- [+title()](src/assets/elements/mixins/title.jade)
+- [+accordion()](src/html6/elements/mixins/accordion.jade)
+- [+body()](src/html6/elements/mixins/body.jade)
+- [+button()](src/html6/elements/mixins/button.jade)
+- [+checkbox()](src/html6/elements/mixins/checkbox.jade)
+- [+code()](src/html6/elements/mixins/code.jade)
+- [+details()](src/html6/elements/mixins/details.jade)
+- [+head()](src/html6/elements/mixins/head.jade)
+- [+hx()](src/html6/elements/mixins/hx.jade)
+- [+icon()](src/html6/elements/mixins/icon.jade)
+- [+label()](src/html6/elements/mixins/label.jade)
+- [+margin()](src/html6/elements/mixins/margin.jade)
+- [+meta()](src/html6/elements/mixins/meta.jade)
+- [+radio()](src/html6/elements/mixins/radio.jade)
+- [+rating()](src/html6/elements/mixins/rating.jade)
+- [+row()](src/html6/elements/mixins/row.jade)
+- [+section()](src/html6/elements/mixins/section.jade)
+- [+select()](src/html6/elements/mixins/select.jade)
+- [+spacer()](src/html6/elements/mixins/spacer.jade)
+- [+sprite()](src/html6/elements/mixins/sprite.jade)
+- [+switch()](src/html6/elements/mixins/switch.jade)
+- [+title()](src/html6/elements/mixins/title.jade)
 
 ## Good dependencies
 

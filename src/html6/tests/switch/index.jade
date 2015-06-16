@@ -1,0 +1,21 @@
+include /html6/elements/main
+
+doctype
++html(lang="ja")
+  +head
+    +title +switch() - UI Testing
+  +body
+    .page
+      section.page__body.padding--lr-1rem
+        p
+          +switch
+        +hr
+        p
+          +label.clear--fix.display--block.line-height--xx-wide
+            +switch(checked="true").float--right
+            +code +switch(checked="true")
+        +hr
+        p
+          +label(for="switch").clear--fix.display--block.line-height--xx-wide
+            +switch(id="switch").float--right
+            +code +label(for="switchId")

@@ -1,0 +1,33 @@
+include /html6/elements/main
+
+doctype
++html(lang="ja")
+  +head
+    +title +rating() - UI Testing
+  +body
+    .page
+      section.page__body.line-height--wide
+        dl
+          dt.padding--lr-1em
+            +code.font--small
+              | +rating(value="3")
+          +dd.font--xx-large
+            +rating(value="3")
+        dl
+          dt.padding--lr-1em
+            +code.font--small
+              | +rating(value="3" stars="7")
+          +dd.font--xx-large
+            +rating(value="3" stars="7")
+        dl
+          dt.padding--lr-1em
+            +code.font--small
+              | +rating(value="50" max="100")
+          +dd.font--xx-large
+            +rating(value="50" max="100")
+        dl
+          dt.padding--lr-1em
+            +code.font--small
+              | +rating(value="5" readonly="true")
+          +dd.font--xx-large
+            +rating(value="5" readonly="true")
