@@ -19,7 +19,7 @@ div
 
 No need to write _width_ or _height_ or even _file path_ in both cases.
 
-## Browser Support
+## Supported browsers
 
 - IE 9+
 - Others
