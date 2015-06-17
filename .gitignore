@@ -37,4 +37,4 @@ legacy-gradient.styl
 nondestructive-reset.jade
 nondestructive-reset.styl
 normalize.styl
-src/html6/styles/sprites/*.styl
+dev/html6/styles/sprites/*.styl

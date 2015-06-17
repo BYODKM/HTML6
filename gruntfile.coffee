@@ -20,36 +20,36 @@ module.exports = (grunt)->
     copy:
       normalize:
         src: 'bower_components/normalize.css/normalize.css'
-        dest: 'src/html6/styles/scaffolds/normalize.styl'
+        dest: 'dev/html6/styles/scaffolds/normalize.styl'
       nondestructiveReset:
         src: 'bower_components/nondestructive-reset.css/src/nondestructive-reset.styl'
-        dest: 'src/html6/styles/scaffolds/nondestructive-reset.styl'
+        dest: 'dev/html6/styles/scaffolds/nondestructive-reset.styl'
       nondestructiveResetJade:
         src: 'bower_components/nondestructive-reset.css/helper/nondestructive-reset.jade'
-        dest: 'src/html6/elements/resets/nondestructive-reset.jade'
+        dest: 'dev/html6/elements/resets/nondestructive-reset.jade'
       legacyGradient:
         src: 'bower_components/legacy-gradient.styl/legacy-gradient.styl'
-        dest: 'src/html6/styles/mixins/legacy-gradient.styl'
+        dest: 'dev/html6/styles/mixins/legacy-gradient.styl'
       globalize:
         src: 'bower_components/globalize.css/dist/globalize.styl'
-        dest: 'src/html6/styles/utilities/globalize.styl'
+        dest: 'dev/html6/styles/utilities/globalize.styl'
       fastclick:
         src: 'bower_components/fastclick/lib/fastclick.js'
-        dest: 'src/html6/scripts/vendors/fastclick.js'
+        dest: 'dev/html6/scripts/vendors/fastclick.js'
 
     sprite:
       options:
         stamp: '<%= Math.floor(Date.now() / 1000) %>'
       at1x:
-        src: 'src/html6/sprites/@1x/*.png'
-        cssTemplate: 'src/html6/styles/sprites/1x.mustache'
-        destCss: 'src/html6/styles/sprites/1x.styl'
+        src: 'dev/html6/sprites/@1x/*.png'
+        cssTemplate: 'dev/html6/styles/sprites/1x.mustache'
+        destCss: 'dev/html6/styles/sprites/1x.styl'
         dest: '.tmp/html6/sprites/1x-<%= sprite.options.stamp %>.png'
         imgPath: '../sprites/1x-<%= sprite.options.stamp %>.png'
       at2x:
-        src: 'src/html6/sprites/@2x/*.png'
-        cssTemplate: 'src/html6/styles/sprites/2x.mustache'
-        destCss: 'src/html6/styles/sprites/2x.styl'
+        src: 'dev/html6/sprites/@2x/*.png'
+        cssTemplate: 'dev/html6/styles/sprites/2x.mustache'
+        destCss: 'dev/html6/styles/sprites/2x.styl'
         dest: '.tmp/html6/sprites/2x-<%= sprite.options.stamp %>.png'
         imgPath: '../sprites/2x-<%= sprite.options.stamp %>.png'
 
@@ -64,7 +64,7 @@ module.exports = (grunt)->
       others:
         files: [
           expand: true,
-          cwd: 'src/html6/images/',
+          cwd: 'dev/html6/images/',
           src: ['**/*.{png,jpg,gif}'],
           dest: 'html6/images/'
           ]
@@ -74,12 +74,12 @@ module.exports = (grunt)->
         compress: true
         use: [require('kouto-swiss')]
       compile:
-        files: 'html6/styles/main.css': ['src/html6/styles/main.styl']
+        files: 'html6/styles/main.css': ['dev/html6/styles/main.styl']
 
     coffee:
       compile:
         expand: true
-        cwd: 'src/'
+        cwd: 'dev/'
         src: ['**/*.coffee']
         dest: '.tmp/'
         ext: (ext)-> return ext.replace(/coffee$/, 'js')
@@ -94,8 +94,8 @@ module.exports = (grunt)->
         beautify: false
       main:
         files: 'html6/scripts/main.js': [
-          'src/html6/scripts/polyfills/*.js',
-          'src/html6/scripts/vendors/*.js',
+          'dev/html6/scripts/polyfills/*.js',
+          'dev/html6/scripts/vendors/*.js',
           '.tmp/html6/scripts/elements/*.js'
           '.tmp/html6/scripts/onloads/*.js'
           '.tmp/html6/scripts/controllers/**/*.js'
@@ -104,13 +104,13 @@ module.exports = (grunt)->
     jade:
       options:
         pretty: false
-        basedir: __dirname + '/src'
+        basedir: __dirname + '/dev'
         data: (filepath)->
           return data:
             relativeRoot: filepath.replace(/[^\/]/g, '').replace(/\//g, '..\/')
       compile:
         expand: true
-        cwd: 'src/'
+        cwd: 'dev/'
         src: ['**/*.jade', '!html6/elements/**/*.jade', '!html6/partials/**/*.jade']
         dest: ''
         ext: '.html'
@@ -126,13 +126,13 @@ module.exports = (grunt)->
       options:
         livereload: true
       stylus:
-        files: ['src/**/*.styl']
+        files: ['dev/**/*.styl']
         tasks: ['stylus']
       coffee:
-        files: ['src/**/*.coffee']
+        files: ['dev/**/*.coffee']
         tasks: ['coffee', 'jshint', 'uglify', 'clean:tmp']
       jade:
-        files: ['src/**/*.jade']
+        files: ['dev/**/*.jade']
         tasks: ['jade']
 
   grunt.registerTask 'default', ['clone', 'image']
