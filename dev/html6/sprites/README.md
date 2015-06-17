@@ -17,13 +17,14 @@ div
   sprite("that.png")
 ```
 
-No need to write __width__ or __height__ and even __path__ in both cases.
+No need to write _width_ or _height_ or even _file path_ in both cases.
 
 ## Browser Support
 
-- IE 9+ and others.
+- IE 9+
+- Others
 
-## Limitations
+## Important Note
 
-- File name will be used by class name. Must not be the same name.
-- @2x images must not have a "@2x" suffix. Use "-2x" or "_2x" instead.
+- File name will be used by class name. Must be different from each other.
+- "@" sign is not allowed to use in class name. Use "-" or "_" instead.
