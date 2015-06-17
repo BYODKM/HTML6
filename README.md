@@ -9,6 +9,24 @@ $ npm install
 $ grunt
 ```
 
+## Usage
+
+```
+include /html6/elements/main
+
+doctype
++html(lang="ja")
+  +head
+    +title Title
+    +meta(description="")
+  +body#top
+    .page#page--index
+      section.page__body
+        h1 Heading
+        h2 Heading
+        h3 Heading
+```
+
 ## Elements
 
 - [+accordion()](src/html6/elements/mixins/accordion.jade)
