@@ -1,4 +1,4 @@
-window.NS.rating = (name)->
+window.HTML6.rating = (name)->
 
   checkboxes = document.getElementsByName(name)
   scope      = checkboxes[0].parentNode

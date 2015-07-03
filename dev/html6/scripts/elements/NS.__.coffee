@@ -1,1 +1,0 @@
-window.NS = window.NS || {}

@@ -29,11 +29,9 @@ node_modules
 
 .tmp
 bower_components
-dev/html6/styles/sprites/*.styl
 fastclick.js
 globalize.styl
-html6/images
-html6/sprites
+html6/styles/sprites/*.styl
 legacy-gradient.styl
 nondestructive-reset.jade
 nondestructive-reset.styl

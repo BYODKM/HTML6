@@ -12,11 +12,11 @@ mixin head
   head
     meta(charset="utf-8")
     if (responsive)
-      include /html6/partials/viewport/responsive
+      include /html6/elements/partials/viewport/responsive
     else
-      include /html6/partials/viewport/adaptive
-    include /html6/partials/head/meta
+      include /html6/elements/partials/viewport/adaptive
+    include /html6/elements/partials/head/meta
     link(href=data.relativeRoot + "html6/styles/main.css" rel="stylesheet" media="only all")
     script(src=data.relativeRoot + "html6/scripts/main.js" charset="utf-8")
-    include /html6/partials/head/link
+    include /html6/elements/partials/head/link
     block

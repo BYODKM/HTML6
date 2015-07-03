@@ -1,4 +1,4 @@
-window.NS.accordion = (id)->
+window.HTML6.accordion = (id)->
 
   loaded = ->
 

@@ -1,4 +1,4 @@
-window.NS.label = (obj)->
+window.HTML6.label = (obj)->
 
   id = obj.for
 
