@@ -50,6 +50,7 @@ doctype
 - [+sprite()](dev/html6/elements/mixins/sprite.jade)
 - [+switch()](dev/html6/elements/mixins/switch.jade)
 - [+title()](dev/html6/elements/mixins/title.jade)
+- [+weak()](dev/html6/elements/mixins/weak.jade)
 
 ## Good dependencies
 
