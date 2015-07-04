@@ -126,7 +126,7 @@ module.exports = (grunt)->
         options:
           port: '3000'
           open:
-            target: 'http://localhost:<%= connect.server.options.port %>/html6/tests/'
+            target: 'http://localhost:<%= connect.server.options.port %>'
 
     watch:
       options:
