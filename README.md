@@ -1,6 +1,6 @@
 # HTML6
 
-> New Front-end Bootstrap
+> A simple and easy-to-use mixin library for Jade
 
 ```
 $ git clone https://github.com/BYODKM/HTML6.git
