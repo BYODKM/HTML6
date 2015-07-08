@@ -1,6 +1,6 @@
 # HTML6
 
-> A simple and easy-to-use mixin library for Jade
+> A simple and reusable mixin library for Jade
 
 ```
 $ git clone https://github.com/BYODKM/HTML6.git
@@ -8,6 +8,13 @@ $ cd HTML6
 $ npm install
 $ grunt
 ```
+
+## Powered by
+
+- Grunt
+- Jade
+- CoffeeScript
+- Stylus
 
 ## Usage
 
