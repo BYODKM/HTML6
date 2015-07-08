@@ -8,7 +8,7 @@ module.exports = (grunt)->
       bower:
         src: ['bower_components']
       sprites:
-        src: ['html6/images/_sprites/*.png']
+        src: ['html6/images/sprites/*.png']
       tmp:
         src: ['.tmp/*']
 
@@ -41,31 +41,31 @@ module.exports = (grunt)->
       options:
         stamp: '<%= Math.floor(Date.now() / 1000) %>'
       at1x:
-        src: 'html6/images/_sprites/@1x/*.png'
-        dest: '.tmp/html6/images/_sprites/1x-<%= sprite.options.stamp %>.png'
+        src: 'html6/images/sprites/@1x/*.png'
+        dest: '.tmp/html6/images/sprites/1x-<%= sprite.options.stamp %>.png'
         cssTemplate: 'html6/styles/sprites/1x.mustache'
         destCss: 'html6/styles/sprites/dest/1x.styl'
-        imgPath: '../images/_sprites/1x-<%= sprite.options.stamp %>.png'
+        imgPath: '../images/sprites/1x-<%= sprite.options.stamp %>.png'
       at2x:
-        src: 'html6/images/_sprites/@2x/*.png'
-        dest: '.tmp/html6/images/_sprites/2x-<%= sprite.options.stamp %>.png'
+        src: 'html6/images/sprites/@2x/*.png'
+        dest: '.tmp/html6/images/sprites/2x-<%= sprite.options.stamp %>.png'
         cssTemplate: 'html6/styles/sprites/2x.mustache'
         destCss: 'html6/styles/sprites/dest/2x.styl'
-        imgPath: '../images/_sprites/2x-<%= sprite.options.stamp %>.png'
+        imgPath: '../images/sprites/2x-<%= sprite.options.stamp %>.png'
 
     imagemin:
       sprites:
         files: [
-          expand: true,
-          cwd: '.tmp/html6/images/_sprites/',
-          src: ['**/*.png'],
-          dest: 'html6/images/_sprites/'
+          expand: true
+          cwd: '.tmp/html6/images/sprites/'
+          src: ['**/*.png']
+          dest: 'html6/images/sprites/'
           ]
       others:
         files: [
-          expand: true,
-          cwd: 'html6/images/_uncompressed/',
-          src: ['**/*.{png, gif, jpg, jpeg}'],
+          expand: true
+          cwd: 'html6/images/'
+          src: ['**/*.{png, gif, jpg, jpeg}']
           dest: 'html6/images/'
           ]
 
