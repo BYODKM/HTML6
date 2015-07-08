@@ -31,7 +31,7 @@ node_modules
 bower_components
 fastclick.js
 globalize.styl
-html6/styles/sprites/*.styl
+html6/styles/sprites/dest/*.styl
 legacy-gradient.styl
 nondestructive-reset.jade
 nondestructive-reset.styl

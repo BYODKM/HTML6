@@ -44,13 +44,13 @@ module.exports = (grunt)->
         src: 'html6/images/_sprites/@1x/*.png'
         dest: '.tmp/html6/images/_sprites/1x-<%= sprite.options.stamp %>.png'
         cssTemplate: 'html6/styles/sprites/1x.mustache'
-        destCss: 'html6/styles/sprites/1x.styl'
+        destCss: 'html6/styles/sprites/dest/1x.styl'
         imgPath: '../images/_sprites/1x-<%= sprite.options.stamp %>.png'
       at2x:
         src: 'html6/images/_sprites/@2x/*.png'
         dest: '.tmp/html6/images/_sprites/2x-<%= sprite.options.stamp %>.png'
         cssTemplate: 'html6/styles/sprites/2x.mustache'
-        destCss: 'html6/styles/sprites/2x.styl'
+        destCss: 'html6/styles/sprites/dest/2x.styl'
         imgPath: '../images/_sprites/2x-<%= sprite.options.stamp %>.png'
 
     imagemin:
