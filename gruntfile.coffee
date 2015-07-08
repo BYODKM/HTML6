@@ -8,7 +8,7 @@ module.exports = (grunt)->
       bower:
         src: ['bower_components']
       sprites:
-        src: ['html6/images/sprites/*.png']
+        src: ['html6/styles/sprites/*.png']
       tmp:
         src: ['.tmp/*']
 
@@ -41,32 +41,25 @@ module.exports = (grunt)->
       options:
         stamp: '<%= Math.floor(Date.now() / 1000) %>'
       at1x:
-        src: 'html6/images/sprites/@1x/*.png'
-        dest: '.tmp/html6/images/sprites/1x-<%= sprite.options.stamp %>.png'
+        src: 'html6/images/sprite/@1x/*.png'
+        dest: 'html6/styles/sprites/1x-<%= sprite.options.stamp %>.png'
         cssTemplate: 'html6/styles/sprites/1x.mustache'
-        destCss: 'html6/styles/sprites/dest/1x.styl'
-        imgPath: '../images/sprites/1x-<%= sprite.options.stamp %>.png'
+        destCss: 'html6/styles/sprites/1x.styl'
+        imgPath: './sprites/1x-<%= sprite.options.stamp %>.png'
       at2x:
-        src: 'html6/images/sprites/@2x/*.png'
-        dest: '.tmp/html6/images/sprites/2x-<%= sprite.options.stamp %>.png'
+        src: 'html6/images/sprite/@2x/*.png'
+        dest: 'html6/styles/sprites/2x-<%= sprite.options.stamp %>.png'
         cssTemplate: 'html6/styles/sprites/2x.mustache'
-        destCss: 'html6/styles/sprites/dest/2x.styl'
-        imgPath: '../images/sprites/2x-<%= sprite.options.stamp %>.png'
+        destCss: 'html6/styles/sprites/2x.styl'
+        imgPath: './sprites/2x-<%= sprite.options.stamp %>.png'
 
     imagemin:
       sprites:
         files: [
           expand: true
-          cwd: '.tmp/html6/images/sprites/'
-          src: ['**/*.png']
-          dest: 'html6/images/sprites/'
-          ]
-      others:
-        files: [
-          expand: true
-          cwd: 'html6/images/'
-          src: ['**/*.{png, gif, jpg, jpeg}']
-          dest: 'html6/images/'
+          cwd: 'html6/styles/sprites/'
+          src: ['*.png']
+          dest: 'html6/styles/sprites/'
           ]
 
     stylus:
