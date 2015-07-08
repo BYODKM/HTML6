@@ -41,13 +41,13 @@ module.exports = (grunt)->
       options:
         stamp: '<%= Math.floor(Date.now() / 1000) %>'
       at1x:
-        src: 'html6/images/sprite/@1x/*.png'
+        src: 'html6/sprites/@1x/*.png'
         dest: 'html6/styles/sprites/1x-<%= sprite.options.stamp %>.png'
         cssTemplate: 'html6/styles/sprites/1x.mustache'
         destCss: 'html6/styles/sprites/1x.styl'
         imgPath: './sprites/1x-<%= sprite.options.stamp %>.png'
       at2x:
-        src: 'html6/images/sprite/@2x/*.png'
+        src: 'html6/sprites/@2x/*.png'
         dest: 'html6/styles/sprites/2x-<%= sprite.options.stamp %>.png'
         cssTemplate: 'html6/styles/sprites/2x.mustache'
         destCss: 'html6/styles/sprites/2x.styl'
