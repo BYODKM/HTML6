@@ -9,7 +9,7 @@ mixin accordion
     block
     if (accordionId == 1)
       script.
-        NS.accordion();
+        HTML6.accordion();
 
 
 
@@ -42,7 +42,7 @@ mixin accordion__item
       )
     div.accordion__item__segue
       div.accordion__item__summary(
-        onclick="NS.accordionItem('accordion__item--#{accordionItemId}')"
+        onclick="HTML6.accordionItem('accordion__item--#{accordionItemId}')"
         )
         | #{summary}
       div.accordion__item__block

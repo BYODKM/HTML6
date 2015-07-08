@@ -18,7 +18,7 @@ mixin label
 
   if (goFlag && targetId)
     span&attributes(attributes).label.label--fastclick(
-      onclick="NS.label({for:'#{targetId}'})"
+      onclick="HTML6.label({for:'#{targetId}'})"
       )
       block
   else
