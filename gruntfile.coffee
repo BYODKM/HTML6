@@ -131,11 +131,11 @@ module.exports = (grunt)->
         tasks: ['coffee', 'jshint', 'uglify', 'clean:tmp']
         files: ['html6/**/*.coffee']
       jade:
-        tasks: ['jade']
+        tasks: ['newer:jade']
         files: ['**/*.jade', '!bower_components/**/*.jade', '!node_modules/**/*.jade']
 
   grunt.registerTask 'default', ['install', 'image']
   grunt.registerTask 'install', ['clean:bower', 'bower', 'copy']
   grunt.registerTask 'image', ['clean:sprites', 'sprite', 'imagemin', 'build']
-  grunt.registerTask 'build', ['stylus', 'coffee', 'jshint', 'uglify', 'clean:tmp', 'jade', 'serve']
+  grunt.registerTask 'build', ['stylus', 'coffee', 'jshint', 'uglify', 'clean:tmp', 'newer:jade', 'serve']
   grunt.registerTask 'serve', ['connect', 'watch']

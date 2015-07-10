@@ -17,6 +17,7 @@
     "grunt-contrib-uglify": "~0.9.1",
     "grunt-contrib-watch": "~0.6.1",
     "grunt-markdown": "~0.7.0",
+    "grunt-newer": "~1.1.1",
     "grunt-spritesmith": "~4.5.1",
     "kouto-swiss": "~0.11.11",
     "load-grunt-tasks": "~3.1.0",
