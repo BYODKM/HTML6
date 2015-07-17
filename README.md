@@ -1,38 +1,6 @@
 # HTML6
 
-> A simple and reusable mixin library for Jade
-
-```
-$ git clone https://github.com/BYODKM/HTML6.git
-$ cd HTML6
-$ npm install
-$ grunt
-```
-
-## Powered by
-
-- Grunt
-- Jade
-- CoffeeScript
-- Stylus
-
-## Usage
-
-```
-include /html6/elements/main
-
-doctype
-+html(lang="ja")
-  +head
-    +title Title
-    +meta(description="")
-  +body#top
-    .page#page--index
-      section.page__body
-        h1 Heading
-        h2 Heading
-        h3 Heading
-```
+- Grunt version is suspended. Gulp version is [HERE](https://github.com/internets-llc/HTML6).
 
 ## Elements
 
